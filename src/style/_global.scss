@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Clarendon Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Clarendon Regular'), url('/src/assets/ClarendonRegular.woff') format('woff');
+}
+
+#root {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: black;
+    font-family: 'Clarendon Regular', sans-serif;
+    color: white;
+}

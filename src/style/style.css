@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Clarendon Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Clarendon Regular"), url("/src/assets/ClarendonRegular.woff") format("woff");
+}
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: black;
+  font-family: "Clarendon Regular", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: black;
+  font-family: "Clarendon Regular";
+  color: white;
+  min-height: 100vh;
+  margin: 1vh 1vw;
+  padding: 1vh 1vw;
+  align-items: center;
+}
+body hr {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to left, #4b6cad, #72419d);
+  margin: 40px auto;
+  border: none;
+  opacity: 0.8;
+}
+
+/*Se aplican con @include !!!*/
+.header {
+  grid-area: header;
+  margin: 40px auto 20px;
+}
+.header h1 {
+  font-size: clamp(4rem, 2vw, 6rem);
+  background: linear-gradient(to left, #2551a8, #72419d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
+  letter-spacing: 0.15em;
+}
+
+/*# sourceMappingURL=style.css.map */
