@@ -1,13 +1,14 @@
-import './App.css'
 import './style/style.css'
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 
 export default function App() {
   return (
-    <>
-      <div className='Navbar'>
-        <Header />
-      </div>
-    </>
+    <main>
+      <header>
+          <h1 className='title'>El Rincón De Coltrane</h1>
+          <hr></hr>
+          <Navbar />
+      </header>
+    </main>
   );
 }

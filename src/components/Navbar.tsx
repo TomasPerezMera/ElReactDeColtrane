@@ -1,8 +1,8 @@
-
+import '../style/style.css';
 
 export default function Navbar() {
   return (
-    <nav className='Navbar'>
+    <nav className='navbar'>
       <h1>Navbar</h1>
     </nav>
   );
