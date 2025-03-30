@@ -1,0 +1,52 @@
+@use './global' as global;
+
+/*Mixin Declaration*/
+
+@mixin separator {
+    width: 90px;
+    height: 5px;
+    padding: 10px;
+    margin: 100px auto;
+}
+
+@mixin hr {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to left, global.$blue, global.$violet);
+    margin: 30px auto;
+    border: none;
+    opacity: 0.8;
+}
+
+@mixin text {
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    max-width: 90vw;
+    color:white;
+    margin: 30px 40px;
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    letter-spacing: 0.08em;
+}
+
+@mixin title {
+    display: flex;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(4rem, 2vw, 6rem);
+    background: linear-gradient(to left, global.$darkBlue, global.$violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    margin: 40px auto 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+    0px 0px 10px rgba(66, 135, 245, 0.6);
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+/*Use with "@include mixins.{mixin}"!!*/

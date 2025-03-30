@@ -5,24 +5,23 @@
   box-sizing: border-box;
 }
 
+/*Variables*/
 @font-face {
   font-family: "Clarendon Regular";
   font-style: normal;
   font-weight: normal;
-  src: local("Clarendon Regular"), url("/src/assets/ClarendonRegular.woff") format("woff");
+  src: local("Clarendon Regular"), url("/assets/ClarendonRegular.woff") format("woff");
 }
 body {
   background-color: black;
   color: white;
   font-family: "Clarendon Regular";
   min-height: 100vh;
-  margin: 1vh 1vw;
-  padding: 1vh 1vw;
 }
 
-/*Variables*/
+/*Partials Import*/
 /*Mixin Declaration*/
-/*@include!!*/
+/*Use with "@include mixins.{mixin}"!!*/
 /*Component Styles*/
 main {
   display: grid;
@@ -34,47 +33,72 @@ main {
   place-items: center;
   max-width: 100%;
   height: 100vh;
-  grid-template-areas: "header" "hr1" "main" "hr2" "footer";
+  margin: 1vh 1vw;
+  padding: 1vh 1vw;
+  grid-template-areas: "header" "main" "hr2" "footer";
 }
 
 hr {
   width: 80%;
   height: 2px;
   background: linear-gradient(to left, #4b6cad, #72419d);
-  margin: 40px auto;
+  margin: 30px auto;
   border: none;
   opacity: 0.8;
 }
 
-main .header {
+main header {
   grid-area: header;
 }
-main .header .title {
-  margin: 40px auto 20px;
+main header .title {
+  display: flex;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: center;
   font-size: clamp(4rem, 2vw, 6rem);
   background: linear-gradient(to left, #2551a8, #72419d);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 40px auto 10px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
   letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 10px auto;
 }
-main .header .navbar {
+main header nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 20px auto;
+  min-height: 20px;
+  max-width: 80%;
 }
-main .header .navbar .navItem {
-  margin: 0 20px;
+main header nav .navItem {
+  margin: 5px auto;
+  height: 100%;
   font-size: clamp(1.5rem, 2vw, 2rem);
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
   letter-spacing: 0.1em;
   cursor: pointer;
 }
-main .header .navbar .navItem:hover {
+main header nav .navItem:hover {
   color: #4f2d7f;
+}
+main header nav .navItem .toggle-button {
+  background-color: transparent;
+  border-color: transparent;
+}
+main header nav .navItem .toggle-button img {
+  width: 20%;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

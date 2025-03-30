@@ -1,9 +1,10 @@
 import '../style/style.css';
+import MusicToggle from './MusicToggle';
 
 export default function Navbar() {
   return (
-    <nav className='navbar'>
-      <h1>Navbar</h1>
+    <nav>
+      <MusicToggle />
     </nav>
   );
 }

@@ -1,53 +1,9 @@
 /*Partials Import*/
 
 @use 'global.scss' as global;
+@use 'mixins.scss' as mixins;
 @use 'app.scss' as app;
 @use 'navbar.scss' as navbar;
-
-
-/*Variables*/
-
-$blue: #4b6cad;
-$violet: #72419d;
-$darkBlue: #2551a8;
-$darkViolet: #4f2d7f;
-
-
-/*Mixin Declaration*/
-
-@mixin separator{
-    width: 90px;
-    height: 5px;
-    padding: 10px;
-    margin: 100px auto;
-}
-
-@mixin text {
-    font-size: clamp(1.5rem, 2vw, 3rem);
-    max-width: 90vw;
-    color:white;
-    margin: 30px 40px;
-    text-align: center;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    letter-spacing: 0.08em;
-}
-
-@mixin title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(2rem, 2vw, 1.5rem);
-    text-align: center;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    margin: 40px auto 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
-    0px 0px 10px rgba(66, 135, 245, 0.6);
-    letter-spacing: 0.1em;
-    min-height: 5rem;
-}
-/*@include!!*/
 
 
 /*Component Styles*/
@@ -62,44 +18,36 @@ main {
     place-items: center;
     max-width: 100%;
     height: 100vh;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
     grid-template-areas:
         "header"
-        "hr1"
         "main"
         "hr2"
         "footer";
 }
 
 hr {
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(to left, $blue, $violet);
-    margin: 40px auto;
-    border: none;
-    opacity: 0.8;
+    @include mixins.hr;
 }
 
 main {
-    .header {
+    header {
         grid-area: header;
         .title {
-            margin: 40px auto 20px;
-            font-size: clamp(4rem, 2vw, 6rem);
-            background: linear-gradient(to left, $darkBlue, $violet);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
-            0px 0px 10px rgba(66, 135, 245, 0.6);
-            letter-spacing: 0.15em;
+            @include mixins.title;
+            margin: 10px auto;
         }
-        .navbar {
+        nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             margin: 20px auto;
+            min-height: 20px;
+            max-width: 80%;
             .navItem {
-                margin: 0 20px;
+                margin: 5px auto;
+                height: 100%;
                 font-size: clamp(1.5rem, 2vw, 2rem);
                 color: white;
                 text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
@@ -107,7 +55,17 @@ main {
                 letter-spacing: 0.1em;
                 cursor: pointer;
                 &:hover {
-                    color: $darkViolet;
+                    color: global.$darkViolet;
+                }
+                .toggle-button {
+                    background-color: transparent;
+                    border-color: transparent;
+                    img {
+                        width: 20%;
+                        height: auto;
+                        margin: 0 auto;
+                        cursor: pointer;
+                    }
                 }
             }
         }
