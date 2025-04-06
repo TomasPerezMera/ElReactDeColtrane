@@ -1,14 +1,15 @@
 import './style/style.css'
 import Navbar from './components/Navbar';
+import WelcomeText from './components/WelcomeText';
 
 export default function App() {
   return (
     <main>
       <header>
-          <h1 className='title'>El Rincón De Coltrane</h1>
-          <hr></hr>
           <Navbar />
+          <hr></hr>
       </header>
+      <WelcomeText />
     </main>
   );
 }

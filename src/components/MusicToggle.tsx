@@ -20,9 +20,9 @@ export default function MusicToggle() {
     };
 
     return (
-        <div className="music-toggle navItem">
-            <button className="toggle-button" onClick={toggleMusic}>
-                <div className={`toggle-switch ${isPlaying ? 'on' : 'off'}`}>
+        <div className="musicToggle navItem">
+            <button className="toggleButton" onClick={toggleMusic}>
+                <div className={`toggleSwitch ${isPlaying ? 'on' : 'off'}`}>
                     <div className={`switch ${isPlaying ? 'on' : 'off'}`}></div>
                 </div>
                 <audio className="background-music" ref={audioRef}>
