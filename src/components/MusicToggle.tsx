@@ -26,11 +26,11 @@ export default function MusicToggle() {
                     <div className={`switch ${isPlaying ? 'on' : 'off'}`}></div>
                 </div>
                 <audio className="background-music" ref={audioRef}>
-                    <source src="/assets/coltraneProject.mp3" type="audio/mpeg" />
+                    <source src="/ElReactDeColtrane/assets/coltraneProject.mp3" type="audio/mpeg" />
                 </audio>
                 <img
                     id="musicImg"
-                    src={`/assets/${isPlaying ? 'pauseButton.png' : 'playButton.png'}`}
+                    src={`/ElReactDeColtrane/assets/${isPlaying ? 'pauseButton.png' : 'playButton.png'}`}
                     alt={isPlaying ? 'Pause Button for Music' : 'Play Button for Music'}
                 />
             </button>
