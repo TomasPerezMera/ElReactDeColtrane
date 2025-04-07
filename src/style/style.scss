@@ -90,9 +90,9 @@ main {
 @media (max-width: 1024px) {
     @include mediaqueries.large;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     @include mediaqueries.medium;
 }
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
     @include mediaqueries.small;
 }
