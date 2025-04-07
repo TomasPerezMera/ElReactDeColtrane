@@ -1,0 +1,100 @@
+/*Media Queries*/
+
+@mixin large {
+    @media (max-width: 1024px) {
+        body {
+            width: 100%;
+            .header {
+                width: 80%;
+            }
+            .welcome {
+                .separator {
+                    margin: 20px auto;
+                }
+            }
+            .main {
+                .subGrid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-auto-rows: auto;
+                    place-items: justify;
+                    gap: 20px 10px;
+                    margin: 10px auto;
+                    .albumContainer {
+                        .flipContainer {
+                            margin: 0px auto;
+                            .flipCard {
+                                .albumDescription {
+                                    span {
+                                        overflow: scroll;
+                                        height: 100%;
+                                        font-size: clamp(2rem, 2vw, 1.5rem);}
+                                }
+                            }
+                        }
+                        .albumTitle {
+                            margin: 1rem auto;
+                            min-height: 8rem;
+                            font-size: clamp(2rem, 2vw, 1.5rem);
+                        }
+                        .botones {
+                            margin: 15px auto;
+                            width: 60%;
+                        }
+                    }
+                    .price {
+                        font-size: clamp(2.5rem, 2vw, 1.5rem);
+                        margin: 2rem auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin medium {
+    @media (max-width: 768px) {
+        body {
+            .main {
+                .header {
+                    h1 {
+                        font-size: clamp(2.5rem, 2vw, 3rem);
+                    }
+                }
+            }
+        .subGrid {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+                place-items: center;
+                gap: 50px 2px;
+                .albumContainer {
+                    .albumTitle {
+                        min-height: 7rem;
+                        font-size: clamp(2.5rem, 2vw, 2rem);
+                    }
+                }
+                .price {
+                    font-size: clamp(2.5rem, 2vw, 2rem);
+                }
+            }
+        }
+    }
+}
+
+@mixin small {
+    @media (max-width: 480px) {
+        body {
+            .main {
+                .subGrid {
+                    div {
+                        .flipContainer {
+                            max-width: 80%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

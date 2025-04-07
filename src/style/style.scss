@@ -3,6 +3,7 @@
 @use 'global.scss' as global;
 @use 'mixins.scss' as mixins;
 @use 'app.scss' as app;
+@use 'mediaqueries.scss' as mediaqueries;
 
 
 /*Component Styles*/
@@ -83,4 +84,15 @@ main {
         margin: 10px auto;
         padding: 5px;
     }
+}
+
+/*Media Query Imports*/
+@media (max-width: 1024px) {
+    @include mediaqueries.large;
+}
+@media (max-width: 1024px) {
+    @include mediaqueries.medium;
+}
+@media (max-width: 1024px) {
+    @include mediaqueries.small;
 }
