@@ -1,18 +1,15 @@
 import '../style/style.css';
 import MusicToggle from './MusicToggle';
-import { Dropdown } from 'primereact/dropdown';
+import NavDropdown from './NavDropdown';
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <nav>
       <h1 className='title'>El Rincón De Coltrane</h1>
-      <Dropdown
-        value="Coltrane"
-        options={["Coltrane", "Miles", "Hendrix"]}
-        placeholder="Select a band"
-        className="p-mb-2 navItem"></Dropdown>
+      <NavDropdown />
       <MusicToggle />
-      <div className="cartToggle navItem">
+      <Link to="/cartDisplay" className="cartToggle navItem">
         <button className="cartButton" type="button">
           <img
             id="musicImg" className="musicImg"
@@ -20,7 +17,7 @@ export default function Navbar() {
             alt={'Shopping Cart Icon'}
           />
         </button>
-      </div>
+      </Link>
     </nav>
   );
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../style/style.css';
 
 export default function WelcomeText() {
@@ -14,7 +15,9 @@ export default function WelcomeText() {
         <p data-aos="fade-down" data-aos-duration="1500" data-aos-delay="3000">
             A continuación, procederemos a listar los ítems disponibles.<br></br><br></br>Debido al stock limitado, se permite un máximo de 5 vinilos por compra - elegí con cuidado!
         </p>
-        <button>Mostrar Catalogo</button>
+        <Link to="/catalog">
+            <button aria-label="Mostrar Catalogo">Mostrar Catalogo</button>
+        </Link>
     </div>
     );
 }
