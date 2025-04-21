@@ -5,21 +5,9 @@ import Catalog from './components/Catalog';
 import CartDisplay from './components/CartDisplay';
 import NotFound from './components/NotFound';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import { toast } from 'react-toastify';
 import { PrimeReactProvider } from 'primereact/api';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useCatalogData } from './hooks/useCatalogData';
-
-function showToast (message: string, time:number) {
-  toast(message, {
-      style: {
-          background: "linear-gradient(to right, #2551a8, #72419d)",
-      },
-      position: "top-right",
-      closeOnClick: false,
-      autoClose: time || 2000,
-  });
-}
 
 export default function App() {
   useCatalogData();
