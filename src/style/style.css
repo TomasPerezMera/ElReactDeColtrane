@@ -104,13 +104,14 @@ header nav .navItem button {
   font: inherit;
   color: white;
   padding: 10px 20px;
-  margin: 20px auto;
+  margin: 10px auto;
   border-radius: 5px;
-  border-color: transparent;
+  border-color: #2551a8;
   background-color: transparent;
   font-size: clamp(1.5rem, 2vw, 2rem);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  border-color: transparent;
   padding: 5px;
   background-color: transparent;
   width: 60%;
@@ -155,9 +156,9 @@ header nav .navItem button img {
   font: inherit;
   color: white;
   padding: 10px 20px;
-  margin: 20px auto;
+  margin: 10px auto;
   border-radius: 5px;
-  border-color: transparent;
+  border-color: #2551a8;
   background-color: transparent;
   font-size: clamp(1.5rem, 2vw, 2rem);
   cursor: pointer;
@@ -197,6 +198,25 @@ header nav .navItem button img {
   height: auto;
   margin: 0 auto;
   cursor: pointer;
+}
+.catalogContainer .catalogItem button {
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border-color: #2551a8;
+  background-color: transparent;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.catalogContainer .catalogItem button:hover {
+  background-color: #72419d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
 }
 
 .notFound {
@@ -243,15 +263,13 @@ header nav .navItem button img {
   font: inherit;
   color: white;
   padding: 10px 20px;
-  margin: 20px auto;
+  margin: 10px auto;
   border-radius: 5px;
-  border-color: transparent;
+  border-color: #2551a8;
   background-color: transparent;
   font-size: clamp(1.5rem, 2vw, 2rem);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-  background-color: #2551a8;
-  margin: 10px auto;
 }
 .item-detail-container button:hover {
   background-color: #72419d;

@@ -37,18 +37,10 @@ export default function ItemCard({ item }: ItemCardProps) {
         <div className="flex justify-content-between">
             <Link to={`/item/${item.id}`}>
                 <Button
-                    label="Descripción"
+                    label="Ver Más"
                     className="p-button-text"
                 />
             </Link>
-            <Button
-                label="Agregar al Carrito"
-                className="p-button-text"
-                onClick={() => {
-                    /* Agregar al carrito Logic -- WIP*/
-                    console.log(`Agregando ${item.name} al carrito`);
-                }}
-            />
         </div>
     );
     return (
@@ -59,25 +51,6 @@ export default function ItemCard({ item }: ItemCardProps) {
             header={header}
             className="catalogItem"
         >
-            <div className="botonesContainer">
-                <Button
-                    label="-"
-                    className="p-button-text decrease-btn"
-                    data-id="{album.id}"
-                    onClick={() => {/* Decrease amount logic -- WIP*/}}
-                />
-                <Button
-                    className="p-button-text"
-                    disabled
-                    >{item.amount}
-                </Button>
-                <Button
-                    label="+"
-                    className="p-button-text increase-btn"
-                    data-id="{album.id}"
-                    onClick={() => {/* Increase amount logic -- WIP*/}}
-                />
-            </div>
         </Card>
     );
 }
