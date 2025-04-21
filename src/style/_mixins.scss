@@ -5,7 +5,6 @@
 @mixin separator {
     width: 90px;
     height: 5px;
-    padding: 10px;
     margin: 10px auto;
 }
 
@@ -19,23 +18,38 @@
 }
 
 @mixin text {
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     max-width: 90vw;
     color:white;
-    margin: 30px 40px;
+    margin: 20px 30px;
     text-align: center;
     overflow-wrap: break-word;
     word-break: break-word;
     letter-spacing: 0.08em;
 }
 
-@mixin title {
-    display: flex;
+@mixin headerTitle {
     margin: 20px auto;
-    align-items: center;
-    justify-content: center;
     font-size: clamp(3rem, 2vw, 4rem);
     background: linear-gradient(to left, global.$darkBlue, global.$violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+    0px 0px 10px rgba(66, 135, 245, 0.6);
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+@mixin title {
+    margin: 10px auto;
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    background: white;
+    color: white;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

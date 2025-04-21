@@ -42,7 +42,7 @@ header {
         background-color: transparent;
         gap: 5px;
         .title {
-            @include mixins.title;
+            @include mixins.headerTitle;
             margin: 5px auto;
             flex-basis: 70%;
         }
@@ -72,16 +72,15 @@ header {
 }
 
 .welcome {
-    @include mixins.text;
-    max-width: 80%;
-    margin: 0 auto;
-    flex-basis: 80%;
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    flex-basis: 70%;
     .separator {
         @include mixins.separator;
         }
     p {
-        margin: 10px auto;
-        padding: 5px;
+        @include mixins.text;
     }
     button{
         @include mixins.button;
@@ -97,7 +96,8 @@ header {
     align-items: center;
     gap: 10px;
     width: 90%;
-    margin: 0px auto;
+    margin: 20px auto 40px;
+    padding: 10px;
     .catalogItem {
         flex-basis: 30%;
         margin: 5px auto;
@@ -111,6 +111,13 @@ header {
         }
         button {
             @include mixins.button;
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
+        }
+        .p-card-title {
+            @include mixins.title;
+        }
+        .p-card-subtitle {
+            @include mixins.title;
         }
     }
 }
