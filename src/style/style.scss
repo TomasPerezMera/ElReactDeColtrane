@@ -9,19 +9,15 @@
 /*Component Styles*/
 
 main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-auto-flow: column;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
     gap: 5px;
     text-align: center;
     place-items: center;
     max-width: 100%;
     height: 100%;
-    grid-template-areas:
-        "header"
-        "catalogContainer"
-        "bottomContainer";
+    flex-basis: 100%;
 }
 
 hr {
@@ -29,43 +25,48 @@ hr {
 }
 
 header {
-    grid-area: header;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-content: center;
     align-items: center;
-    .title {
-        @include mixins.title;
-        margin: 5px auto;
-    }
+    gap: 0px;
+    width: 100%;
+    flex-basis: 10%;
     nav {
         display: flex;
+        flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
-        margin: 20px auto 5px;
+        margin: 20px auto 0px;
         min-height: 20px;
-        max-width: 80%;
-        height: auto;
         background-color: transparent;
+        gap: 5px;
+        .title {
+            @include mixins.title;
+            margin: 5px auto;
+            flex-basis: 70%;
+        }
         .navItem {
             margin: auto;
-            height: 100%;
-            width: 15%;
+            width: 20%;
+            height: 15%;
             font-size: clamp(1.5rem, 2vw, 2rem);
             color: white;
-            cursor: pointer;
-                .toggleButton {
+            flex-basis: 10%;
+            background-color: transparent;
+            border-color: transparent;
+            button {
+                @include mixins.button;
+                padding: 5px;
+                background-color: transparent;
+                width: 60%;
+                img {
                     width: 100%;
                     height: auto;
-                    background-color: transparent;
-                    border-color: transparent;
-                    img {
-                        width: 50%;
-                        height: auto;
-                        margin: 0 auto;
-                        cursor: pointer;
-                    }
+                    cursor: pointer;
                 }
+            }
         }
     }
 }
@@ -74,6 +75,7 @@ header {
     @include mixins.text;
     max-width: 80%;
     margin: 0 auto;
+    flex-basis: 80%;
     .separator {
         @include mixins.separator;
         }
@@ -81,10 +83,13 @@ header {
         margin: 10px auto;
         padding: 5px;
     }
+    button{
+        @include mixins.button;
+        background-color: global.$darkBlue;
+    }
 }
 
 .catalogContainer {
-    grid-area: catalogContainer;
     @include mixins.catalogContainer;
     display: flex;
     flex-direction: column;
@@ -92,6 +97,7 @@ header {
     align-items: center;
     max-width: 80%;
     margin: 0 auto;
+    flex-basis: 80%;
     .catalogItem {
         margin: 5px auto;
         padding: 5px;
@@ -104,15 +110,7 @@ header {
         }
     }
 }
-.bottomContainer {
-    grid-area: bottomContainer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 80%;
-    margin: 0 auto;
-}
+
 /*Media Query Imports*/
 @media (max-width: 1024px) {
     @include mediaqueries.large;

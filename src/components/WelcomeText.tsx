@@ -14,7 +14,6 @@ export default function WelcomeText() {
         <p data-aos="fade-down" data-aos-duration="1500" data-aos-delay="3000">
             A continuación, procederemos a listar los ítems disponibles.<br></br><br></br>Debido al stock limitado, se permite un máximo de 5 vinilos por compra - elegí con cuidado!
         </p>
-        <div className="separator"></div>
         <button>Mostrar Catalogo</button>
     </div>
     );

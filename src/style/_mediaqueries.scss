@@ -5,13 +5,15 @@
         main {
             header {
                 width: 100%;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-content: center;
                 .title {
                     width: 80%;
                     font-size: clamp(2.5rem, 2vw, 3rem);
                 }
                 nav {
-                    width: 95%;
-                    max-width: 95%;
+                    flex-flow: column wrap;
                     margin: 15px auto;
                     .navItem {
                         width: 20%;
@@ -29,43 +31,22 @@
                     margin: 20px auto;
                 }
             }
-            .subGrid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-auto-rows: auto;
-                place-items: justify;
-                gap: 20px 10px;
-                margin: 10px auto;
-                .albumContainer {
-                    .flipContainer {
-                        margin: 0px auto;
-                        .flipCard {
-                            .albumDescription {
-                                span {
-                                    overflow: scroll;
-                                    height: 100%;
-                                    font-size: clamp(2rem, 2vw, 1.5rem);}
-                            }
-                        }
-                    }
-                    .albumTitle {
-                        margin: 1rem auto;
-                        min-height: 8rem;
-                        font-size: clamp(2rem, 2vw, 1.5rem);
-                    }
-                    .botones {
-                        margin: 15px auto;
-                        width: 60%;
-                    }
-                }
-                .price {
-                    font-size: clamp(2.5rem, 2vw, 1.5rem);
-                    margin: 2rem auto;
-                }
+            .albumTitle {
+                margin: 1rem auto;
+                min-height: 8rem;
+                font-size: clamp(2rem, 2vw, 1.5rem);
             }
+            .botones {
+                margin: 15px auto;
+                width: 60%;
+            }
+            .price {
+                font-size: clamp(2.5rem, 2vw, 1.5rem);
+                margin: 2rem auto;
             }
         }
     }
+}
 
 @mixin medium {
     @media (max-width: 768px) {

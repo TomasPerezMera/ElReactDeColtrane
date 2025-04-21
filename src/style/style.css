@@ -17,6 +17,8 @@ body {
   color: white;
   font-family: "Clarendon Regular";
   min-height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 /*Partials Import*/
@@ -25,35 +27,47 @@ body {
 /*Media Queries*/
 /*Component Styles*/
 main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-auto-flow: column;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
   gap: 5px;
   text-align: center;
   place-items: center;
   max-width: 100%;
   height: 100%;
-  grid-template-areas: "header" "catalogContainer" "bottomContainer";
+  flex-basis: 100%;
 }
 
 hr {
   width: 80%;
   height: 2px;
   background: linear-gradient(to left, #4b6cad, #72419d);
-  margin: 20px auto;
+  margin: 10px auto;
   border: none;
   opacity: 0.8;
 }
 
 header {
-  grid-area: header;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-content: center;
   align-items: center;
+  gap: 0px;
+  width: 100%;
+  flex-basis: 10%;
 }
-header .title {
+header nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px auto 0px;
+  min-height: 20px;
+  background-color: transparent;
+  gap: 5px;
+}
+header nav .title {
   display: flex;
   margin: 20px auto;
   align-items: center;
@@ -72,35 +86,43 @@ header .title {
   font-weight: 500;
   line-height: 1.2;
   margin: 5px auto;
-}
-header nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 20px auto 5px;
-  min-height: 20px;
-  max-width: 80%;
-  height: auto;
-  background-color: transparent;
+  flex-basis: 70%;
 }
 header nav .navItem {
   margin: auto;
-  height: 100%;
-  width: 15%;
+  width: 20%;
+  height: 15%;
   font-size: clamp(1.5rem, 2vw, 2rem);
   color: white;
-  cursor: pointer;
-}
-header nav .navItem .toggleButton {
-  width: 100%;
-  height: auto;
+  flex-basis: 10%;
   background-color: transparent;
   border-color: transparent;
 }
-header nav .navItem .toggleButton img {
-  width: 50%;
+header nav .navItem button {
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: white;
+  padding: 10px 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: transparent;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  padding: 5px;
+  background-color: transparent;
+  width: 60%;
+}
+header nav .navItem button:hover {
+  background-color: #72419d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
+}
+header nav .navItem button img {
+  width: 100%;
   height: auto;
-  margin: 0 auto;
   cursor: pointer;
 }
 
@@ -115,6 +137,7 @@ header nav .navItem .toggleButton img {
   letter-spacing: 0.08em;
   max-width: 80%;
   margin: 0 auto;
+  flex-basis: 80%;
 }
 .welcome .separator {
   width: 90px;
@@ -126,9 +149,28 @@ header nav .navItem .toggleButton img {
   margin: 10px auto;
   padding: 5px;
 }
+.welcome button {
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: white;
+  padding: 10px 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: transparent;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  background-color: #2551a8;
+}
+.welcome button:hover {
+  background-color: #72419d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
+}
 
 .catalogContainer {
-  grid-area: catalogContainer;
   margin: 5px auto;
   padding: 10px;
   border: 4px solid transparent;
@@ -136,12 +178,16 @@ header nav .navItem .toggleButton img {
   border-image-slice: 1;
   padding: 10px 20px;
   background-color: black;
+  /*Check the below 2 configs*/
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 80%;
   margin: 0 auto;
+  flex-basis: 80%;
 }
 .catalogContainer .catalogItem {
   margin: 5px auto;
@@ -155,28 +201,20 @@ header nav .navItem .toggleButton img {
   cursor: pointer;
 }
 
-.bottomContainer {
-  grid-area: bottomContainer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 80%;
-  margin: 0 auto;
-}
-
 /*Media Query Imports*/
 @media (max-width: 1024px) and (max-width: 1024px) {
   main header {
     width: 100%;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
   }
   main header .title {
     width: 80%;
     font-size: clamp(2.5rem, 2vw, 3rem);
   }
   main header nav {
-    width: 95%;
-    max-width: 95%;
+    flex-flow: column wrap;
     margin: 15px auto;
   }
   main header nav .navItem {
@@ -189,32 +227,16 @@ header nav .navItem .toggleButton img {
   main .welcome .separator {
     margin: 20px auto;
   }
-  main .subGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: auto;
-    place-items: justify;
-    gap: 20px 10px;
-    margin: 10px auto;
-  }
-  main .subGrid .albumContainer .flipContainer {
-    margin: 0px auto;
-  }
-  main .subGrid .albumContainer .flipContainer .flipCard .albumDescription span {
-    overflow: scroll;
-    height: 100%;
-    font-size: clamp(2rem, 2vw, 1.5rem);
-  }
-  main .subGrid .albumContainer .albumTitle {
+  main .albumTitle {
     margin: 1rem auto;
     min-height: 8rem;
     font-size: clamp(2rem, 2vw, 1.5rem);
   }
-  main .subGrid .albumContainer .botones {
+  main .botones {
     margin: 15px auto;
     width: 60%;
   }
-  main .subGrid .price {
+  main .price {
     font-size: clamp(2.5rem, 2vw, 1.5rem);
     margin: 2rem auto;
   }

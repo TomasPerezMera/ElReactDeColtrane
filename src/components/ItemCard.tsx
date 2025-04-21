@@ -13,6 +13,15 @@ interface ItemCardProps {
     precioARS: (precio: number) => string;
 }
 
+const withLineBreaks = (text: string) => {
+    return text.split('\n').map((line, index) => (
+        <span key={index}>
+            {line}
+            <br />
+        </span>
+    ));
+};
+
 export default function ItemCard({ item, precioARS }: ItemCardProps) {
     return (
         <div key={item.id} className='albumContainer'>
@@ -20,13 +29,13 @@ export default function ItemCard({ item, precioARS }: ItemCardProps) {
                 <img src={`/ElReactDeColtrane/${item.source}`} alt={item.name} height="250" width="250" className='albumImage' />
             </div>
             <div className="albumDescription">
-                <span>{item.description}</span>
+                <span>{withLineBreaks(item.description)}</span>
             </div>
             <h2 id="albumTitle-${albumItem.id}" className="albumTitle">
                 {item.name}
             </h2>
             <h2 className="price">
-                ${precioARS(item.price)}
+                {precioARS(item.price)}
             </h2>
             <div className="botonesContainer">
                 <button type="button" className="decrease-btn" data-id="{album.id}">-</button>
