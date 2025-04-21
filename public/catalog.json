@@ -1,83 +1,83 @@
 [
-    {
-        "id": 1,
-        "name": "Blue Train",
-        "year": 1957,
-        "price": 46400,
-        "amount": 0,
-        "source": "/covers/blueTrain.jpg",
-        "description": "Blue Train es un álbum de John Coltrane publicado en 1957 por Blue Note Records, y grabado en Nueva Jersey. Es la única grabación de Coltrane como director de sesión para Blue Note, y ha sido certificado Disco de Oro.<br><br>Se grabó durante su tiempo trabajando con Thelonious Monk, con la participación de Miles Davis, Paul Chambers y Philly Joe Jones, quienes tocaron junto con Coltrane en 'Milestones' de Davis."
-    },
-    {
-        "id": 2,
-        "name": "Stardust",
-        "year": 1963,
-        "price": 67200,
-        "amount": 0,
-        "source": "/covers/stardust.jpg",
-        "description": "Stardust es un álbum de Coltrane publicado en 1963 por Prestige Records, y compilado a partir de dos sesiones de 1958 en Nueva Jersey. <br><br>A medida que la fama de Coltrane crecía durante la década de 1960, mucho después de que hubiera dejado de grabar para la discográfica, Prestige utilizó grabaciones no editadas para crear nuevos álbumes comercializables sin el aporte ni la aprobación de Coltrane."
-    },
-    {
-        "id": 3,
-        "name": "Giant Steps",
-        "year": 1960,
-        "price": 86200,
-        "amount": 0,
-        "source": "/covers/giantSteps.jpg",
-        "description": "Giant Steps es el quinto álbum de estudio de John Coltrane como líder, publicado en 1960 por Atlantic Records. Es el primer álbum de Coltrane como líder para Atlantic, y muchos de sus temas se han convertido en estándares para saxofonistas.<br><br>En 2004, fue uno de los cincuenta álbumes elegidos por la Biblioteca del Congreso de los EE. UU. para su inclusión en el Registro Nacional de Grabaciones."
-    },
-    {
-        "id": 4,
-        "name": "Ballads",
-        "year": 1961,
-        "price": 64840,
-        "amount": 0,
-        "source": "/covers/ballads.jpg",
-        "description":"Ballads es un álbum de jazz de Coltrane, grabado entre diciembre de 1961 y 1962, y publicado por Impulse! en 1963.<br><br>El crítico Gene Lees declaró que el cuarteto nunca antes había tocado las canciones: 'Llegaron con partituras de las canciones de una tienda de música, y justo antes de las grabaciones, discutían cada melodía, ensayaban a medias durante media hora y luego lo grababan'. Cada pieza se grabó en una sola toma, excepto 'All or Nothing at All'.<br><br>En 2008, el álbum recibió el premio Grammy del Salón de la Fama."
-    },
-    {
-        "id": 5,
-        "name": "My Favorite Things",
-        "year": 1961,
-        "price": 58570,
-        "amount": 0,
-        "source": "/covers/myFavoriteThings.jpg",
-        "description":"My Favorite Things es el séptimo álbum de estudio de John Coltrane, publicado en 1961 por Atlantic Records. Fue el primer álbum en el que Coltrane tocó el saxofón soprano. Una versión editada de la canción que da título al álbum se convirtió en un sencillo de éxito en la radio en 1961.<br><br>El disco se convirtió en un gran éxito comercial, y en 1998, recibió el Grammy del Salón de la Fama."
-    },
-    {
-        "id": 6,
-        "name": "John Coltrane and Johnny Hartman",
-        "year": 1963,
-        "price": 68300,
-        "amount": 0,
-        "source": "/covers/johnnyHartman.jpg",
-        "description":"John Coltrane and Johnny Hartman es un álbum de estudio de 1963, siendo Hartman el único vocalista con el que Coltrane grabaría como líder. Fue incluido en el Salón de la Fama de los Grammy en 2013.  El álbum se publicó en 1963, en un momento en el que Hartman estaba en la cresta de la ola por el éxito de su álbum 'I Just Dropped By to Say Hello'.<br><br>Hartman dijo más tarde que todas las canciones del álbum se grabaron en una sola toma, excepto por 'You Are Too Beautiful', que requirió dos tomas porque a Elvin Jones se le cayó una de sus baquetas durante la primera toma."
-    },
-    {
-        "id": 7,
-        "name": "A Love Supreme",
-        "year": 1964,
-        "price": 76100,
-        "amount": 0,
-        "source": "/covers/aLoveSupreme.jpg",
-        "description": "A Love Supreme es un álbum de estudio de John Coltrane. Fue publicado en 1965 por Impulse! Records y se considera una de sus mejores obras. El álbum es una suite en cuatro partes, dividida entre las pistas: «Acknowledgement», «Resolution», «Pursuance» y «Psalm».<br><br>Es uno de los álbumes más vendidos de Coltrane y es ampliamente considerado como uno de los mejores álbumes de jazz de todos los tiempos, la obra maestra de Coltrane, y es 'sin duda el álbum más querido de Coltrane', según Robert Christgau, quien añade que 'cimentó el estatus divino de 'Trane en Japón'."
-    },
-    {
-        "id": 8,
-        "name": "Meditations",
-        "year": 1965,
-        "price": 63880,
-        "amount": 0,
-        "source": "/covers/meditations.jpg",
-        "description":"Meditations es un álbum de 1966 de John Coltrane.  En él aparecen Coltrane y el legendario Pharoah Sanders como solistas, ambos tocando el saxofón tenor.<br><br>El álbum fue considerado por muchos como una desviación de la obra anterior de Coltrane, ya que se alejaba del cuarteto estándar. Además de contar con el cuarteto clásico de Coltrane, también incorpora a un segundo baterista, Rashied Ali. El álbum fue considerado la 'continuación espiritual' de 'A Love Supreme'."
-    },
-    {
-        "id": 9,
-        "name": "Ascension",
-        "year": 1966,
-        "price": 57180,
-        "amount": 0,
-        "source": "/covers/ascension.jpg",
-        "description":"Ascension es un álbum de jazz de John Coltrane publicado en 1966. A menudo se considera la piedra angular de su obra, ya que los álbumes anteriores tenían una estructura más convencional, y los posteriores fueron más sueltos y se inspiraban en el 'free jazz'.<br><br>Además de Coltrane, el álbum incluye actuaciones del quinteto de trabajo de Coltrane de la época, formado por McCoy Tyner, Jimmy Garrison y Elvin Jones, además de contribuciones de Art Davis, Freddie Hubbard, Dewey Johnson, Marion Brown, John Tchicai y Pharoah Sanders."
-    }
+  {
+    "id": 1,
+    "name": "Blue Train",
+    "year": 1957,
+    "price": 46400,
+    "amount": 0,
+    "source": "/covers/blueTrain.jpg",
+    "description": "Blue Train es un álbum de John Coltrane publicado en 1957 por Blue Note Records, y grabado en Nueva Jersey. Es la única grabación de Coltrane como director de sesión para Blue Note, y ha sido certificado Disco de Oro.<br><br>Se grabó durante su tiempo trabajando con Thelonious Monk, con la participación de Miles Davis, Paul Chambers y Philly Joe Jones, quienes tocaron junto con Coltrane en 'Milestones' de Davis."
+  },
+  {
+    "id": 2,
+    "name": "Stardust",
+    "year": 1963,
+    "price": 67200,
+    "amount": 0,
+    "source": "/covers/stardust.jpg",
+    "description": "Stardust es un álbum de Coltrane publicado en 1963 por Prestige Records, y compilado a partir de dos sesiones de 1958 en Nueva Jersey. <br><br>A medida que la fama de Coltrane crecía durante la década de 1960, mucho después de que hubiera dejado de grabar para la discográfica, Prestige utilizó grabaciones no editadas para crear nuevos álbumes comercializables sin el aporte ni la aprobación de Coltrane."
+  },
+  {
+    "id": 3,
+    "name": "Giant Steps",
+    "year": 1960,
+    "price": 86200,
+    "amount": 0,
+    "source": "/covers/giantSteps.jpg",
+    "description": "Giant Steps es el quinto álbum de estudio de John Coltrane como líder, publicado en 1960 por Atlantic Records. Es el primer álbum de Coltrane como líder para Atlantic, y muchos de sus temas se han convertido en estándares para saxofonistas.<br><br>En 2004, fue uno de los cincuenta álbumes elegidos por la Biblioteca del Congreso de los EE. UU. para su inclusión en el Registro Nacional de Grabaciones."
+  },
+  {
+    "id": 4,
+    "name": "Ballads",
+    "year": 1961,
+    "price": 64840,
+    "amount": 0,
+    "source": "/covers/ballads.jpg",
+    "description": "Ballads es un álbum de jazz de Coltrane, grabado entre diciembre de 1961 y 1962, y publicado por Impulse! en 1963.<br><br>El crítico Gene Lees declaró que el cuarteto nunca antes había tocado las canciones: 'Llegaron con partituras de las canciones de una tienda de música, y justo antes de las grabaciones, discutían cada melodía, ensayaban a medias durante media hora y luego lo grababan'. Cada pieza se grabó en una sola toma, excepto 'All or Nothing at All'.<br><br>En 2008, el álbum recibió el premio Grammy del Salón de la Fama."
+  },
+  {
+    "id": 5,
+    "name": "My Favorite Things",
+    "year": 1961,
+    "price": 58570,
+    "amount": 0,
+    "source": "/covers/myFavoriteThings.jpg",
+    "description": "My Favorite Things es el séptimo álbum de estudio de John Coltrane, publicado en 1961 por Atlantic Records. Fue el primer álbum en el que Coltrane tocó el saxofón soprano. Una versión editada de la canción que da título al álbum se convirtió en un sencillo de éxito en la radio en 1961.<br><br>El disco se convirtió en un gran éxito comercial, y en 1998, recibió el Grammy del Salón de la Fama."
+  },
+  {
+    "id": 6,
+    "name": "John Coltrane and Johnny Hartman",
+    "year": 1963,
+    "price": 68300,
+    "amount": 0,
+    "source": "/covers/johnnyHartman.jpg",
+    "description": "John Coltrane and Johnny Hartman es un álbum de estudio de 1963, siendo Hartman el único vocalista con el que Coltrane grabaría como líder. Fue incluido en el Salón de la Fama de los Grammy en 2013.  El álbum se publicó en 1963, en un momento en el que Hartman estaba en la cresta de la ola por el éxito de su álbum 'I Just Dropped By to Say Hello'.<br><br>Hartman dijo más tarde que todas las canciones del álbum se grabaron en una sola toma, excepto por 'You Are Too Beautiful', que requirió dos tomas porque a Elvin Jones se le cayó una de sus baquetas durante la primera toma."
+  },
+  {
+    "id": 7,
+    "name": "A Love Supreme",
+    "year": 1964,
+    "price": 76100,
+    "amount": 0,
+    "source": "/covers/aLoveSupreme.jpg",
+    "description": "A Love Supreme es un álbum de estudio de John Coltrane. Fue publicado en 1965 por Impulse! Records y se considera una de sus mejores obras. El álbum es una suite en cuatro partes, dividida entre las pistas: «Acknowledgement», «Resolution», «Pursuance» y «Psalm».<br><br>Es uno de los álbumes más vendidos de Coltrane y es ampliamente considerado como uno de los mejores álbumes de jazz de todos los tiempos, la obra maestra de Coltrane, y es 'sin duda el álbum más querido de Coltrane', según Robert Christgau, quien añade que 'cimentó el estatus divino de 'Trane en Japón'."
+  },
+  {
+    "id": 8,
+    "name": "Meditations",
+    "year": 1965,
+    "price": 63880,
+    "amount": 0,
+    "source": "/covers/meditations.jpg",
+    "description": "Meditations es un álbum de 1966 de John Coltrane.  En él aparecen Coltrane y el legendario Pharoah Sanders como solistas, ambos tocando el saxofón tenor.<br><br>El álbum fue considerado por muchos como una desviación de la obra anterior de Coltrane, ya que se alejaba del cuarteto estándar. Además de contar con el cuarteto clásico de Coltrane, también incorpora a un segundo baterista, Rashied Ali. El álbum fue considerado la 'continuación espiritual' de 'A Love Supreme'."
+  },
+  {
+    "id": 9,
+    "name": "Ascension",
+    "year": 1966,
+    "price": 57180,
+    "amount": 0,
+    "source": "/covers/ascension.jpg",
+    "description": "Ascension es un álbum de jazz de John Coltrane publicado en 1966. A menudo se considera la piedra angular de su obra, ya que los álbumes anteriores tenían una estructura más convencional, y los posteriores fueron más sueltos y se inspiraban en el 'free jazz'.<br><br>Además de Coltrane, el álbum incluye actuaciones del quinteto de trabajo de Coltrane de la época, formado por McCoy Tyner, Jimmy Garrison y Elvin Jones, además de contribuciones de Art Davis, Freddie Hubbard, Dewey Johnson, Marion Brown, John Tchicai y Pharoah Sanders."
+  }
 ]
