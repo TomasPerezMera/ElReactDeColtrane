@@ -22,13 +22,15 @@ interface ItemCardProps {
 export default function ItemCard({ item }: ItemCardProps) {
     const header = (
         <div className="cardImage">
-            <img
-                src={`/ElReactDeColtrane/${item.source}`}
-                alt={item.name}
-                height="250"
-                width="250"
-                className='albumImage'
-            />
+            <Link to={`/item/${item.id}`}>
+                <img
+                    src={`/ElReactDeColtrane/${item.source}`}
+                    alt={item.name}
+                    height="250"
+                    width="250"
+                    className='albumImage'
+                />
+            </Link>
         </div>
     );
     const footer = (
