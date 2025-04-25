@@ -2,7 +2,6 @@ import { useCatalogData } from '../hooks/useCatalogData';
 import { precioARS } from '../utils/currencyFormatter';
 import { useParams } from 'react-router-dom';
 import { Card } from 'primereact/card';
-import { Link } from 'react-router-dom';
 import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,7 +46,8 @@ export default function ItemDetailContainer() {
                 <Button
                     className="p-button-text"
                     disabled
-                    >{item.amount}
+                    value={item.amount}
+                    >
                 </Button>
                 <Button
                     label="+"

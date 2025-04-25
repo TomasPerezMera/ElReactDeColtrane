@@ -160,7 +160,7 @@ header {
                 }
                 .albumDescription {
                     @include mixins.text;
-                    font-size: clamp(1.5rem, 2vw, 2rem);
+                    font-size: clamp(1.2rem, 2vw, 1.5rem);
                 }
             }
             .itemAmountContainer {
@@ -168,7 +168,7 @@ header {
                 flex-flow: row nowrap;
                 justify-content: center;
                 align-content: center;
-                width: 90%;
+                width: 60%;
                 margin: 10px auto;
                 button {
                     @include mixins.button;
@@ -189,7 +189,7 @@ header {
                     min-width: 30%;
                     max-width: 40%;
                     span {
-                        font-size: clamp(1rem, 2vw, 1.5rem);
+                        font-size: clamp(1.2rem, 2vw, 1.5rem);
                     }
                 }
             }

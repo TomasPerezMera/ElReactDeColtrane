@@ -276,16 +276,14 @@ header nav .navButtons button img {
 }
 
 .itemDetailContainer {
-  /*WIP*/
-  /*WIP*/
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-content: center;
   gap: 1rem;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 10px;
-  width: 100%;
+  width: 80%;
   height: auto;
   border-radius: 5px;
   background-color: transparent;
@@ -341,14 +339,14 @@ header nav .navButtons button img {
   overflow-wrap: break-word;
   word-break: break-word;
   letter-spacing: 0.08em;
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 .itemDetailContainer .p-card-body .p-card-content .itemAmountContainer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-content: center;
-  width: 90%;
+  width: 60%;
   margin: 10px auto;
 }
 .itemDetailContainer .p-card-body .p-card-content .itemAmountContainer button {
@@ -403,7 +401,7 @@ header nav .navButtons button img {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
 }
 .itemDetailContainer .p-card-body .p-card-content .optionsButtons button span {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 /*Media Query Imports*/
@@ -473,6 +471,7 @@ header nav .navButtons button img {
   }
   .itemDetailContainer {
     margin: 20px auto 40px;
+    width: 90%;
   }
 }
 @media (max-width: 480px) {
