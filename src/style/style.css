@@ -145,6 +145,7 @@ header nav .navButtons button img {
   max-width: 90vw;
   color: white;
   margin: 20px 30px;
+  padding: 10px;
   text-align: center;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -260,6 +261,7 @@ header nav .navButtons button img {
   max-width: 90vw;
   color: white;
   margin: 20px 30px;
+  padding: 10px;
   text-align: center;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -273,30 +275,83 @@ header nav .navButtons button img {
   padding: 5px;
 }
 
-.item-detail-container {
-  /*WIP*/
-  /*WIP*/
-}
-.item-detail-container .p-card-body .p-card-content {
+.itemDetailContainer {
   /*WIP*/
   /*WIP*/
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  margin: 100px auto;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+  margin: 20px auto;
   padding: 10px;
+  width: 100%;
+  height: auto;
   border-radius: 5px;
   background-color: transparent;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(61, 5, 152, 0.6);
 }
-.item-detail-container img {
-  width: 20%;
+.itemDetailContainer .p-card-body .p-card-content {
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+}
+.itemDetailContainer .p-card-body .p-card-content img {
+  width: calc(50% - 1rem);
   height: auto;
   margin: 0 auto;
-  cursor: pointer;
 }
-.item-detail-container button {
+.itemDetailContainer .p-card-body .p-card-content .itemDetail h1 {
+  margin: 10px auto;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  background: white;
+  color: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 40px auto 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: clamp(2.5rem, 2vw, 3.5rem);
+}
+.itemDetailContainer .p-card-body .p-card-content .itemDetail p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 90vw;
+  color: white;
+  margin: 20px 30px;
+  padding: 10px;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  letter-spacing: 0.08em;
+  font-size: clamp(2rem, 2vw, 2.5rem);
+}
+.itemDetailContainer .p-card-body .p-card-content .itemDetail .albumDescription {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 90vw;
+  color: white;
+  margin: 20px 30px;
+  padding: 10px;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  letter-spacing: 0.08em;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.itemDetailContainer .p-card-body .p-card-content .itemAmountContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  width: 90%;
+  margin: 10px auto;
+}
+.itemDetailContainer .p-card-body .p-card-content .itemAmountContainer button {
   justify-content: center;
   align-items: center;
   font: inherit;
@@ -309,11 +364,46 @@ header nav .navButtons button img {
   font-size: clamp(1.5rem, 2vw, 2rem);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  max-width: calc(50% - 1rem);
 }
-.item-detail-container button:hover {
+.itemDetailContainer .p-card-body .p-card-content .itemAmountContainer button:hover {
   background-color: #72419d;
   transform: scale(1.05);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
+}
+.itemDetailContainer .p-card-body .p-card-content .optionsButtons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 10px auto;
+  gap: 5rem;
+  width: 90%;
+}
+.itemDetailContainer .p-card-body .p-card-content .optionsButtons button {
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border-color: #2551a8;
+  background-color: transparent;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  flex: 1;
+  width: calc(50% - 1rem);
+  min-width: 30%;
+  max-width: 40%;
+}
+.itemDetailContainer .p-card-body .p-card-content .optionsButtons button:hover {
+  background-color: #72419d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
+}
+.itemDetailContainer .p-card-body .p-card-content .optionsButtons button span {
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 /*Media Query Imports*/
@@ -354,6 +444,9 @@ header nav .navButtons button img {
   }
 }
 @media (max-width: 768px) {
+  main {
+    padding: 1vw 1vh;
+  }
   header {
     margin: 20px auto 10px;
   }
@@ -377,6 +470,9 @@ header nav .navButtons button img {
   .catalogContainer .catalogItem .cardImage {
     width: 90%;
     margin: 5px auto;
+  }
+  .itemDetailContainer {
+    margin: 20px auto 40px;
   }
 }
 @media (max-width: 480px) {

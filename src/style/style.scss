@@ -137,22 +137,63 @@ header {
     }
 }
 
-.item-detail-container {
-    /*WIP*/
-    /*WIP*/
+.itemDetailContainer {
+    @include mixins.detailContainer;
     .p-card-body {
         .p-card-content {
-            @include mixins.itemCardContainer;
+            justify-content: center;
+            align-content: center;
+            gap: 1rem;
+            img {
+                width: calc(50% - 1rem);
+                height: auto;
+                margin: 0 auto;
+            }
+            .itemDetail {
+                h1 {
+                    @include mixins.title;
+                    font-size: clamp(2.5rem, 2vw, 3.5rem);
+                }
+                p {
+                    @include mixins.text;
+                    font-size: clamp(2rem, 2vw, 2.5rem);
+                }
+                .albumDescription {
+                    @include mixins.text;
+                    font-size: clamp(1.5rem, 2vw, 2rem);
+                }
+            }
+            .itemAmountContainer {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-content: center;
+                width: 90%;
+                margin: 10px auto;
+                button {
+                    @include mixins.button;
+                    max-width: calc(50% - 1rem);
+                }
+            }
+            .optionsButtons {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                margin: 10px auto;
+                gap: 5rem;
+                width: 90%;
+                button {
+                    @include mixins.button;
+                    flex: 1;
+                    width: calc(50% - 1rem);
+                    min-width: 30%;
+                    max-width: 40%;
+                    span {
+                        font-size: clamp(1rem, 2vw, 1.5rem);
+                    }
+                }
+            }
         }
-    }
-    img {
-        width: 20%;
-        height: auto;
-        margin: 0 auto;
-        cursor: pointer;
-    }
-    button {
-        @include mixins.button;
     }
 }
 
