@@ -20,8 +20,8 @@ export default function MusicToggle() {
     };
 
     return (
-        <div className="musicToggle navItem">
-            <button className="toggleButton" onClick={toggleMusic}>
+        <div className="musicToggle">
+            <button className="musicToggleButton" onClick={toggleMusic}>
                 <div className={`toggleSwitch ${isPlaying ? 'on' : 'off'}`}>
                     <div className={`switch ${isPlaying ? 'on' : 'off'}`}></div>
                 </div>

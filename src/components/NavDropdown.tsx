@@ -25,6 +25,7 @@ export default function NavDropdown() {
             value={dropdownValue}
             options={routes}
             onChange={handleChange}
+            className="navItem"
             placeholder="Navegar"/>
     );
 };
