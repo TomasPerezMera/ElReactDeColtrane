@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const withLineBreaks = (text: string) => {
     return text.split('\n').map((line, index) => (
@@ -15,6 +16,9 @@ const withLineBreaks = (text: string) => {
 };
 
 export default function ItemDetailContainer() {
+    // Custom hook to scroll to the top of the page when the component mounts
+    useScrollToTop();
+
     const { id } = useParams();
     const { catalog } = useCatalogData();
     const navigate = useNavigate();
@@ -28,6 +32,8 @@ export default function ItemDetailContainer() {
                     src={`/ElReactDeColtrane/${item.source}`}
                     alt={item.name}
                     className="detail-image"
+                    onClick ={() => navigate('/catalog')}
+                    style={{ cursor: 'pointer' }}
             />
             <div className="itemDetail">
                 <h1>{item.name}</h1>
@@ -57,7 +63,6 @@ export default function ItemDetailContainer() {
                 />
             </div>
             <div className="optionsButtons">
-
                 <Button
                     label="Volver al Catalogo"
                     aria-label="Mostrar Catalogo"

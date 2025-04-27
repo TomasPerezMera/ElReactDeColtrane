@@ -9,6 +9,7 @@ import { PrimeReactProvider } from 'primereact/api';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useCatalogData } from './hooks/useCatalogData';
 
+
 export default function App() {
   useCatalogData();
   return (

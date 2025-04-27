@@ -295,7 +295,7 @@ header nav .navButtons button img {
   gap: 1rem;
 }
 .itemDetailContainer .p-card-body .p-card-content img {
-  width: calc(50% - 1rem);
+  width: calc(30% - 1rem);
   height: auto;
   margin: 0 auto;
 }
