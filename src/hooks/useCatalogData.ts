@@ -1,36 +1,49 @@
 import { useEffect, useState } from 'react';
-
-interface CatalogItem {
-    id: number;
-    name: string;
-    year: number;
-    price: number;
-    amount: number;
-    source: string;
-    description: string;
-}
+import { CatalogItem } from '../context/CartContext';
 
 let cachedCatalog: CatalogItem[] | null = null;
 
 export function useCatalogData() {
     const [catalog, setCatalog] = useState<CatalogItem[]>(cachedCatalog || []);
     const [loading, setLoading] = useState(!cachedCatalog);
+    const [error, setError] = useState<Error | null>(null);
 
-useEffect(() => {
-    if (!cachedCatalog) {
-        fetch('/ElReactDeColtrane/catalog.json')
-        .then((res) => res.json())
-        .then((data) => {
-            cachedCatalog = data;
-            setCatalog(data);
-            setLoading(false);
-        })
-        .catch((err) => {
-            console.error('Failed to fetch catalog', err);
-            setLoading(false);
-        });
-    }
-}, []);
+    useEffect(() => {
+        if (cachedCatalog) {
+            return;
+        }
+        let isMounted = true;
 
-    return { catalog, loading };
+        const fetchCatalog = async () => {
+                try {
+                    const response = await fetch('/ElReactDeColtrane/catalog.json');
+
+                    // Check if the response is ok
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch catalog: ${response.status} ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+
+                    // Only update state if the component is still mounted
+                    if (isMounted) {
+                        cachedCatalog = data;
+                        setCatalog(data);
+                        setLoading(false);
+                    }
+                } catch (err) {
+                    console.error('Error fetching catalog:', err);
+                    if (isMounted) {
+                        setError(err instanceof Error ? err : new Error(String(err)));
+                        setLoading(false);
+                    }
+                }
+            };
+            fetchCatalog();
+            // Cleanup function to handle component unmounting during fetch
+            return () => {
+                isMounted = false;
+            };
+        }, []);
+    return { catalog, loading, error };
 }

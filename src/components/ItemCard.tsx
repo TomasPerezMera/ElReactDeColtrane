@@ -2,17 +2,9 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { precioARS } from '../utils/currencyFormatter';
 import { Link } from 'react-router-dom';
+import { CatalogItem } from '../context/CartContext';
 
-
-interface CatalogItem {
-    id: number;
-    name: string;
-    year: number;
-    price: number;
-    amount: number;
-    source: string;
-    description: string;
-}
+// This component is used to display a card for each item in the catalog.
 
 interface ItemCardProps {
     item: CatalogItem;

@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 
-export default function showToast (message: string, time:number) {
+export default function useToast() {
+    return (message: string, time: number) => {
     toast(message, {
         style: {
             background: "linear-gradient(to right, #2551a8, #72419d)",
@@ -8,5 +9,6 @@ export default function showToast (message: string, time:number) {
         position: "top-right",
         closeOnClick: false,
         autoClose: time || 2000,
-    });
+        });
+    }
 }

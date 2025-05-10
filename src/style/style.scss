@@ -138,58 +138,74 @@ header {
 }
 
 .itemDetailContainer {
-    @include mixins.detailContainer;
     .p-card-body {
         .p-card-content {
-            justify-content: center;
-            align-content: center;
-            gap: 1rem;
-            img {
-                width: calc(30% - 1rem);
-                height: auto;
-                margin: 0 auto;
-            }
-            .itemDetail {
-                h1 {
-                    @include mixins.title;
-                    font-size: clamp(2.5rem, 2vw, 3.5rem);
-                }
-                p {
-                    @include mixins.text;
-                    font-size: clamp(2rem, 2vw, 2.5rem);
-                }
-                .albumDescription {
-                    @include mixins.text;
-                    font-size: clamp(1.2rem, 2vw, 1.5rem);
-                }
-            }
-            .itemAmountContainer {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: center;
-                align-content: center;
-                width: 60%;
-                margin: 10px auto;
-                button {
-                    @include mixins.button;
-                    max-width: calc(50% - 1rem);
-                }
-            }
-            .optionsButtons {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-between;
-                margin: 10px auto;
-                gap: 5rem;
+            @include mixins.itemDetailContainer;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            grid-template-rows: auto auto;
+            gap: 5px 5px;
+            grid-template-areas:
+                "img itemDetail"
+                "img buttons";
+            .imageContainer{
+                grid-area: img;
                 width: 90%;
-                button {
-                    @include mixins.button;
-                    flex: 1;
-                    width: calc(50% - 1rem);
-                    min-width: 30%;
-                    max-width: 40%;
-                    span {
-                        font-size: clamp(1.2rem, 2vw, 1.5rem);
+                margin: auto;
+                img {
+                    width: 100%;
+                    height: auto;
+                    margin: 0 auto;
+                    cursor: pointer;
+                }
+            }
+            .cardBodyContainer {
+                .itemDetail {
+                    grid-area: itemDetail;
+                    h1 {
+                        @include mixins.title;
+                        font-size: clamp(2.5rem, 2vw, 3.5rem);
+                    }
+                    p {
+                        @include mixins.text;
+                        font-size: clamp(1.8rem, 2vw, 2.5rem);
+                    }
+                    .albumDescription {
+                        @include mixins.text;
+                        font-size: clamp(1rem, 2vw, 1.2rem);
+                    }
+                }
+                .buttonsContainer{
+                    .itemQuantityButtons {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-around;
+                        align-items: center;
+                        align-content: center;
+                        width: 60%;
+                        margin: 10px auto;
+                        button {
+                            @include mixins.button;
+                            max-width: calc(50% - 1rem);
+                        }
+                    }
+                    .optionsButtons {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-between;
+                        margin: 10px auto;
+                        gap: 5rem;
+                        width: 90%;
+                        button {
+                            @include mixins.button;
+                            flex: 1;
+                            width: calc(50% - 1rem);
+                            min-width: 30%;
+                            max-width: 40%;
+                            span {
+                                font-size: clamp(1.2rem, 2vw, 1.5rem);
+                            }
+                        }
                     }
                 }
             }

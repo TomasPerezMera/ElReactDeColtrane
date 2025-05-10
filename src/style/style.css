@@ -178,7 +178,7 @@ header nav .navButtons button img {
   padding: 10px;
   gap: 1rem;
   width: 90%;
-  border: 4px solid transparent;
+  border: 5px solid transparent;
   border-image: linear-gradient(to left, #72419d, #2551a8);
   border-image-slice: 1;
   background-color: transparent;
@@ -275,31 +275,35 @@ header nav .navButtons button img {
   padding: 5px;
 }
 
-.itemDetailContainer {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-content: center;
-  gap: 1rem;
-  margin: 30px auto;
+.itemDetailContainer .p-card-body .p-card-content {
+  margin: 10px auto 30px;
   padding: 10px;
   width: 80%;
   height: auto;
   border-radius: 5px;
   background-color: transparent;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(61, 5, 152, 0.6);
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-rows: auto auto;
+  gap: 5px 5px;
+  grid-template-areas: "img itemDetail" "img buttons";
 }
-.itemDetailContainer .p-card-body .p-card-content {
-  justify-content: center;
-  align-content: center;
-  gap: 1rem;
+.itemDetailContainer .p-card-body .p-card-content .imageContainer {
+  grid-area: img;
+  width: 90%;
+  margin: auto;
 }
-.itemDetailContainer .p-card-body .p-card-content img {
-  width: calc(30% - 1rem);
+.itemDetailContainer .p-card-body .p-card-content .imageContainer img {
+  width: 100%;
   height: auto;
   margin: 0 auto;
+  cursor: pointer;
 }
-.itemDetailContainer .p-card-body .p-card-content .itemDetail h1 {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .itemDetail {
+  grid-area: itemDetail;
+}
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .itemDetail h1 {
   margin: 10px auto;
   font-size: clamp(1.5rem, 2vw, 2.5rem);
   background: white;
@@ -317,7 +321,7 @@ header nav .navButtons button img {
   line-height: 1.2;
   font-size: clamp(2.5rem, 2vw, 3.5rem);
 }
-.itemDetailContainer .p-card-body .p-card-content .itemDetail p {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .itemDetail p {
   font-size: clamp(1rem, 2vw, 1.2rem);
   max-width: 90vw;
   color: white;
@@ -327,9 +331,9 @@ header nav .navButtons button img {
   overflow-wrap: break-word;
   word-break: break-word;
   letter-spacing: 0.08em;
-  font-size: clamp(2rem, 2vw, 2.5rem);
+  font-size: clamp(1.8rem, 2vw, 2.5rem);
 }
-.itemDetailContainer .p-card-body .p-card-content .itemDetail .albumDescription {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .itemDetail .albumDescription {
   font-size: clamp(1rem, 2vw, 1.2rem);
   max-width: 90vw;
   color: white;
@@ -339,17 +343,18 @@ header nav .navButtons button img {
   overflow-wrap: break-word;
   word-break: break-word;
   letter-spacing: 0.08em;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
-.itemDetailContainer .p-card-body .p-card-content .itemAmountContainer {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .itemQuantityButtons {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   align-content: center;
   width: 60%;
   margin: 10px auto;
 }
-.itemDetailContainer .p-card-body .p-card-content .itemAmountContainer button {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .itemQuantityButtons button {
   justify-content: center;
   align-items: center;
   font: inherit;
@@ -364,12 +369,12 @@ header nav .navButtons button img {
   transition: all 0.5s ease-in-out;
   max-width: calc(50% - 1rem);
 }
-.itemDetailContainer .p-card-body .p-card-content .itemAmountContainer button:hover {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .itemQuantityButtons button:hover {
   background-color: #72419d;
   transform: scale(1.05);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
 }
-.itemDetailContainer .p-card-body .p-card-content .optionsButtons {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -377,7 +382,7 @@ header nav .navButtons button img {
   gap: 5rem;
   width: 90%;
 }
-.itemDetailContainer .p-card-body .p-card-content .optionsButtons button {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons button {
   justify-content: center;
   align-items: center;
   font: inherit;
@@ -395,12 +400,12 @@ header nav .navButtons button img {
   min-width: 30%;
   max-width: 40%;
 }
-.itemDetailContainer .p-card-body .p-card-content .optionsButtons button:hover {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons button:hover {
   background-color: #72419d;
   transform: scale(1.05);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
 }
-.itemDetailContainer .p-card-body .p-card-content .optionsButtons button span {
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons button span {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
@@ -439,6 +444,31 @@ header nav .navButtons button img {
   }
   .catalogContainer .catalogItem button {
     font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
+  .itemDetailContainer .p-card-body .p-card-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .itemDetailContainer .p-card-body .p-card-content .imageContainer {
+    width: 80%;
+  }
+  .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .itemAmountButtons {
+    width: 90%;
+    margin: 20px auto;
+  }
+  .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .itemAmountButtons button {
+    width: 10%;
+    max-width: 40%;
+    height: auto;
+    margin: 0px 10px;
+  }
+  .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons {
+    margin: 30px auto 10px;
+  }
+  .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons button span {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
   }
 }
 @media (max-width: 768px) {

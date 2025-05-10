@@ -39,6 +39,41 @@
             }
         }
     }
+    .itemDetailContainer {
+        .p-card-body {
+            .p-card-content {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                .imageContainer{
+                    width: 80%;
+                }
+                .cardBodyContainer {
+                    .buttonsContainer{
+                        .itemAmountButtons {
+                            width: 90%;
+                            margin: 20px auto;
+                            button {
+                                width: 10%;
+                                max-width: 40%;
+                                height: auto;
+                                margin: 0px 10px;;
+                            }
+                        }
+                        .optionsButtons {
+                            margin: 30px auto 10px;
+                            button {
+                                span {
+                                    font-size: clamp(0.9rem, 2vw, 1.2rem);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @mixin medium {
