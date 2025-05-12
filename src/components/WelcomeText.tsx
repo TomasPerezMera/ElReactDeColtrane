@@ -16,7 +16,7 @@ export default function WelcomeText() {
             A continuación, procederemos a listar los ítems disponibles.<br></br><br></br>Debido al stock limitado, se permite un máximo de 5 vinilos por compra - elegí con cuidado!
         </p>
         <Link to="/catalog">
-            <button aria-label="Mostrar Catalogo">Mostrar Catalogo</button>
+            <button aria-label="Mostrar Catalogo">Mostrar Catálogo</button>
         </Link>
     </div>
     );

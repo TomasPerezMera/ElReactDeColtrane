@@ -409,6 +409,95 @@ header nav .navButtons button img {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
+.cartDisplayContainer {
+  display: flex;
+  margin: 5px auto;
+  padding: 10px;
+  gap: 1rem;
+  width: 90%;
+  border: 5px solid transparent;
+  border-image: linear-gradient(to left, #72419d, #2551a8);
+  border-image-slice: 1;
+  background-color: transparent;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 40px;
+  padding: 10px;
+}
+.cartDisplayContainer .cartItemContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  width: 90%;
+  margin: 5px auto;
+  padding: 10px;
+  text-align: center;
+}
+.cartDisplayContainer .cartItemContainer img {
+  width: 12%;
+  height: auto;
+  margin: 0 auto;
+  cursor: default;
+}
+.cartDisplayContainer .cartItemContainer button {
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border-color: #2551a8;
+  background-color: transparent;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+}
+.cartDisplayContainer .cartItemContainer button:hover {
+  background-color: #72419d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
+}
+.cartDisplayContainer .cartItemContainer .p-card-title {
+  margin: 10px auto;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  background: white;
+  color: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 40px auto 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.cartDisplayContainer .cartItemContainer .p-card-subtitle {
+  margin: 10px auto;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  background: white;
+  color: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 40px auto 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 /*Media Query Imports*/
 @media (max-width: 1024px) {
   header {

@@ -28,11 +28,11 @@ export default function ItemDetailContainer() {
     const { id } = useParams();
     const { catalog, loading, error } = useCatalogData();
     const navigate = useNavigate();
-    const { addToCart } = useContext(CartContext) as CartContextType;
+    const { addCartItem } = useContext(CartContext) as CartContextType;
     const showToast = useToast();
 
-    // Initializing item counter state.
-    const [count, setCount] = useState(0);
+    // Initializing item quantity to 0 and its setter.
+    const [quantity, setQuantity] = useState(0);
 
     if (loading) {
         return (
@@ -60,16 +60,19 @@ export default function ItemDetailContainer() {
     }
 
     const increaseItem = () => {
-        if (count >= 5) {
-            showToast('Máximo de unidades excedidas para este ítem!', 2000);
+        if (quantity >= 5) {
+            showToast('Alcanzaste el máximo de unidades para este ítem!', 2000);
             return;
         } else {
-            setCount(prev => prev + 1);
+            setQuantity(prev => prev + 1);
         }
     };
 
     const decreaseItem = () => {
-        if (count > 0) setCount(prev => prev - 1);
+        if (quantity > 0) setQuantity(prev => prev - 1);
+        if (quantity === 0) {
+            showToast('Alcanzaste el mínimo de unidades para este ítem', 2000);
+        }
     };
 
     const handleAddToCart = () => {
@@ -77,12 +80,12 @@ export default function ItemDetailContainer() {
             showToast("Lo sentimos! Este producto no está disponible.", 3000);
             return;
         }
-        if (count > 0) {
-            addToCart(item, count);
-            setCount(0);
-            showToast("Éxito - añadido al carrito!", 2000);
+        if (quantity > 0) {
+            addCartItem(item, quantity);
+            setQuantity(0);
+            showToast("Éxito - tu selección fue añadida al carrito!", 3000);
         } else {
-            showToast("Error - tu carrito está vacío!", 2000);
+            showToast("Error - seleccioná una cantidad!", 2000);
         }
     };
 
@@ -109,11 +112,10 @@ export default function ItemDetailContainer() {
                             label="-"
                             className="p-button-text decrease-btn"
                             data-id="{album.id}"
-                            disabled={count === 0 || !item.available}
                             onClick={decreaseItem}
                         />
                         <button disabled style={{ cursor: "default" }}>
-                            {count}
+                            {quantity}
                         </button>
                         <Button
                             label="+"
@@ -124,8 +126,8 @@ export default function ItemDetailContainer() {
                     </div>
                     <div className="optionsButtons">
                         <Button
-                            label="Volver al Catalogo"
-                            aria-label="Mostrar Catalogo"
+                            label="Volver al Catálogo"
+                            aria-label="Mostrar Catálogo"
                             onClick={() => navigate('/catalog')}
                         />
                         <Button

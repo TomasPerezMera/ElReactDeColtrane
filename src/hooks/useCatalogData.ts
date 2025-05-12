@@ -18,14 +18,13 @@ export function useCatalogData() {
                 try {
                     const response = await fetch('/ElReactDeColtrane/catalog.json');
 
-                    // Check if the response is ok
                     if (!response.ok) {
                         throw new Error(`Failed to fetch catalog: ${response.status} ${response.statusText}`);
                     }
 
                     const data = await response.json();
 
-                    // Only update state if the component is still mounted
+                    // Only updates state if the component is still mounted.
                     if (isMounted) {
                         cachedCatalog = data;
                         setCatalog(data);

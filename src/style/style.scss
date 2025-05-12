@@ -213,6 +213,43 @@ header {
     }
 }
 
+.cartDisplayContainer{
+    @include mixins.sectionContainer;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 40px;
+    padding: 10px;
+    .cartItemContainer {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        width: 90%;
+        margin: 5px auto;
+        padding: 10px;
+        text-align: center;
+        img {
+            width: 12%;
+            height: auto;
+            margin: 0 auto;
+            cursor: default;
+        }
+        button {
+            @include mixins.button;
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
+        }
+        .p-card-title {
+            @include mixins.title;
+        }
+        .p-card-subtitle {
+            @include mixins.title;
+        }
+    }
+}
+
 /*Media Query Imports*/
 @media (max-width: 1024px) {
     @include mediaqueries.large;

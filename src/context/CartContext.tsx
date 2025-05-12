@@ -8,7 +8,6 @@ export type CatalogItem = {
     source: string;
     description: string;
     available: boolean;
-    year: number;
 };
 
 export type CartItem = {
@@ -22,9 +21,9 @@ export type CartItem = {
 
 export type CartContextType = {
     cartList: CartItem[];
-    addToCart: (item: CatalogItem, quantity: number) => void;
-    clearList: () => void;
-    deleteItem: (id: number) => void;
+    addCartItem: (item: CartItem, quantity: number) => void;
+    clearCart: () => void;
+    deleteCartItem: (id: number) => void;
 };
 
 type Props = {
@@ -36,7 +35,7 @@ export const CartContext = createContext<CartContextType | undefined>(undefined)
 const CartContextProvider = ({ children }: Props) => {
     const [cartList, setCartList] = useState<CartItem[]>([]);
 
-    const addToCart = (item: CatalogItem, quantity: number) => {
+    const addCartItem = (item: CartItem, quantity: number) => {
         const existingItem = cartList.find(prod => prod.id === item.id);
     if (existingItem) {
         setCartList(cartList.map(prod =>
@@ -51,19 +50,19 @@ const CartContextProvider = ({ children }: Props) => {
             price: item.price,
             source: item.source,
             description: item.description,
-            quantity: quantity
+            quantity: quantity,
             };
         setCartList([...cartList, newItem]);
         }
     };
 
-    const clearList = () => setCartList([]);
+    const clearCart = () => setCartList([]);
 
-    const deleteItem = (id: number) => {
+    const deleteCartItem = (id: number) => {
         setCartList(cartList.filter(prod => prod.id !== id));
     };
     return (
-        <CartContext.Provider value={{ cartList, addToCart, clearList, deleteItem }}>
+        <CartContext.Provider value={{ cartList, addCartItem, clearCart, deleteCartItem }}>
             {children}
         </CartContext.Provider>
     );
