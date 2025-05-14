@@ -6,8 +6,6 @@
 
 #### El proyecto integra una base de datos de productos alojada en Firebase.
 
-\*\*
-
 ---
 
 El proyecto cuenta con los siguientes directorios principales;

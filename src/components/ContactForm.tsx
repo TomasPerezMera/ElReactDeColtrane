@@ -116,7 +116,7 @@ export default function ContactForm() {
     const submitContactForm = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Validate form
+        // Validate form.
         if (!validateForm()) {
         toast('Por favor, corregí los errores en el formulario y volvé a intentarlo.', 3000);
         return;
@@ -124,13 +124,14 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
         try {
-      // Save to Firebase
+      // Save to Firebase.
         await saveToFirebase();
 
-        // Show success message
-        toast('Tus datos se han guardado correctamente', 3000);
+        // Show success message.
+        toast('Datos completados con éxito.', 5000);
+        toast('Tu factura será enviada a tu correo electrónico. ¡Gracias por tu compra!', 5000);
 
-        // Clear form
+        // Clear form.
         setFormData({
             name: '',
             surname: '',
@@ -139,7 +140,7 @@ export default function ContactForm() {
             address: ''
         });
         } catch (error) {
-        // Show error message
+        // Show error message.
         toast('Hubo un problema al enviar el formulario. Por favor, intenta nuevamente.', 3000);
         console.error("Form submission error:", error);
         } finally {

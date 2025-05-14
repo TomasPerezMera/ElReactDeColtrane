@@ -1,11 +1,11 @@
-/*Partials Import*/
+// Partials Import
 
 @use 'global.scss' as global;
 @use 'mixins.scss' as mixins;
 @use 'mediaqueries.scss' as mediaqueries;
 
 
-/*Component Styles*/
+// Component Styles
 
 main {
     display: flex;

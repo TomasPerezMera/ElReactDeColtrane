@@ -1,5 +1,7 @@
 import { toast } from 'react-toastify';
 
+// Custom hook to call consistent toasts.
+
 export default function useToast(message: string, time: number) {
     return (
         toast(message, {
