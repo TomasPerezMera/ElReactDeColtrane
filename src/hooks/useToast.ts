@@ -1,14 +1,19 @@
 import { toast } from 'react-toastify';
 
-export default function useToast() {
-    return (message: string, time: number) => {
-    toast(message, {
+export default function useToast(message: string, time: number) {
+    return (
+        toast(message, {
         style: {
             background: "linear-gradient(to right, #2551a8, #72419d)",
-        },
-        position: "top-right",
-        closeOnClick: false,
+            '--toastify-toast-width': '320px',
+            '--toastify-toast-min-height': '70px',
+            '--toastify-toast-max-height': '70px',
+            'fontSize': 'clamp(0.8rem, 2vw, 0.9rem)',
+        } as React.CSSProperties,
+        position: "top-left",
+        closeOnClick: true,
+        pauseOnHover: false,
         autoClose: time || 2000,
-        });
-    }
+        })
+    );
 }

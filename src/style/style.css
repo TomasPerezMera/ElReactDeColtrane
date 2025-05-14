@@ -284,7 +284,7 @@ header nav .navButtons button img {
   background-color: transparent;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(61, 5, 152, 0.6);
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 0.9fr 1.1fr;
   grid-template-rows: auto auto;
   gap: 5px 5px;
   grid-template-areas: "img itemDetail" "img buttons";
@@ -299,9 +299,19 @@ header nav .navButtons button img {
   height: auto;
   margin: 0 auto;
   cursor: pointer;
+  position: sticky;
+  top: 100px;
+}
+.itemDetailContainer .p-card-body .p-card-content .cardBodyContainer {
+  width: 100%;
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .itemDetail {
   grid-area: itemDetail;
+  background-color: rgba(61, 5, 152, 0.237);
+  background-blend-mode: overlay;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .itemDetail h1 {
   margin: 10px auto;
@@ -319,7 +329,7 @@ header nav .navButtons button img {
   letter-spacing: 0.15em;
   font-weight: 500;
   line-height: 1.2;
-  font-size: clamp(2.5rem, 2vw, 3.5rem);
+  font-size: clamp(2.2rem, 2vw, 2.5rem);
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .itemDetail p {
   font-size: clamp(1rem, 2vw, 1.2rem);
@@ -331,7 +341,8 @@ header nav .navButtons button img {
   overflow-wrap: break-word;
   word-break: break-word;
   letter-spacing: 0.08em;
-  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin: 10px auto;
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .itemDetail .albumDescription {
   font-size: clamp(1rem, 2vw, 1.2rem);
@@ -343,7 +354,7 @@ header nav .navButtons button img {
   overflow-wrap: break-word;
   word-break: break-word;
   letter-spacing: 0.08em;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .itemQuantityButtons {
   display: flex;
@@ -378,9 +389,11 @@ header nav .navButtons button img {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
+  align-content: center;
   margin: 10px auto;
-  gap: 5rem;
-  width: 90%;
+  gap: 6rem;
+  width: 100%;
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons button {
   justify-content: center;
@@ -395,10 +408,9 @@ header nav .navButtons button img {
   font-size: clamp(1.5rem, 2vw, 2rem);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-  flex: 1;
-  width: calc(50% - 1rem);
-  min-width: 30%;
-  max-width: 40%;
+  flex-shrink: 1;
+  width: 100%;
+  height: auto;
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons button:hover {
   background-color: #72419d;
@@ -406,7 +418,7 @@ header nav .navButtons button img {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer .buttonsContainer .optionsButtons button span {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .cartDisplayContainer {
@@ -426,24 +438,93 @@ header nav .navButtons button img {
   margin: 20px auto 40px;
   padding: 10px;
 }
-.cartDisplayContainer .cartItemContainer {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+.cartDisplayContainer .cartItemGrid {
+  margin: 10px 20px;
+}
+.cartDisplayContainer .cartItemGrid .cartItemList li {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-rows: auto;
+  grid-auto-flow: column;
   gap: 5px;
-  width: 90%;
+  width: 100%;
   margin: 5px auto;
   padding: 10px;
   text-align: center;
+  grid-template-areas: "cartItemImage cartItemDetails cartItemButtons";
 }
-.cartDisplayContainer .cartItemContainer img {
-  width: 12%;
+.cartDisplayContainer .cartItemGrid .cartItemList li .cartItemImage {
+  grid-area: cartItemImage;
+  width: 40%;
+}
+.cartDisplayContainer .cartItemGrid .cartItemList li .cartItemImage img {
+  width: 100%;
   height: auto;
   margin: 0 auto;
   cursor: default;
 }
-.cartDisplayContainer .cartItemContainer button {
+.cartDisplayContainer .cartItemGrid .cartItemList li .cartItemDetails {
+  grid-area: cartItemDetails;
+  text-align: center;
+  width: 100%;
+  margin: 5px auto;
+  padding: 10px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 90vw;
+  color: white;
+  margin: 20px 30px;
+  padding: 10px;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  letter-spacing: 0.08em;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.cartDisplayContainer .cartItemGrid .cartItemList li .cartItemDetails .p-card-title {
+  margin: 10px auto;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  background: white;
+  color: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 40px auto 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.cartDisplayContainer .cartItemGrid .cartItemList li .cartItemDetails .p-card-subtitle {
+  margin: 10px auto;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  background: white;
+  color: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 40px auto 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.cartDisplayContainer .cartItemGrid .cartItemList li .cartItemButtons {
+  grid-area: cartItemButtons;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  margin: 5px auto;
+}
+.cartDisplayContainer .cartItemGrid .cartItemList li .cartItemButtons button {
   justify-content: center;
   align-items: center;
   font: inherit;
@@ -458,44 +539,10 @@ header nav .navButtons button img {
   transition: all 0.5s ease-in-out;
   font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
-.cartDisplayContainer .cartItemContainer button:hover {
+.cartDisplayContainer .cartItemGrid .cartItemList li .cartItemButtons button:hover {
   background-color: #72419d;
   transform: scale(1.05);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
-}
-.cartDisplayContainer .cartItemContainer .p-card-title {
-  margin: 10px auto;
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
-  background: white;
-  color: white;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  margin: 40px auto 10px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
-  letter-spacing: 0.15em;
-  font-weight: 500;
-  line-height: 1.2;
-}
-.cartDisplayContainer .cartItemContainer .p-card-subtitle {
-  margin: 10px auto;
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
-  background: white;
-  color: white;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  margin: 40px auto 10px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
-  letter-spacing: 0.15em;
-  font-weight: 500;
-  line-height: 1.2;
 }
 
 /*Media Query Imports*/

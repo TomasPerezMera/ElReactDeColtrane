@@ -6,7 +6,7 @@ import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 import { useContext, useState } from 'react';
-import { CartContext, CartContextType, CatalogItem } from '../context/CartContext';
+import { CartContext, CartContextType, CatalogItem, CartItem  } from '../context/CartContext';
 import useToast from '../hooks/useToast';
 
 // This component is used to display the details of a specific item in the catalog.
@@ -21,6 +21,19 @@ const withLineBreaks = (text: string) => {
     ));
 };
 
+// Helper function to convert a CatalogItem into a CartItem to manipulate.
+const convertToCartItem = (catalogItem: CatalogItem, quantity: number): CartItem => {
+    const { id, name, price, source, description } = catalogItem;
+    return {
+        id,
+        name,
+        price,
+        source,
+        description,
+        quantity,
+    };
+};
+
 export default function ItemDetailContainer() {
     // Custom hook to scroll to the top of the page when the component mounts.
     useScrollToTop();
@@ -28,8 +41,7 @@ export default function ItemDetailContainer() {
     const { id } = useParams();
     const { catalog, loading, error } = useCatalogData();
     const navigate = useNavigate();
-    const { addCartItem } = useContext(CartContext) as CartContextType;
-    const showToast = useToast();
+    const { addCartItem, totalItems, } = useContext(CartContext) as CartContextType;
 
     // Initializing item quantity to 0 and its setter.
     const [quantity, setQuantity] = useState(0);
@@ -60,10 +72,16 @@ export default function ItemDetailContainer() {
     }
 
     const increaseItem = () => {
-        if (quantity >= 5) {
-            showToast('Alcanzaste el máximo de unidades para este ítem!', 2000);
+        if (!item.available) {
+            useToast("Lo sentimos! Este producto no está disponible.", 3000);
             return;
-        } else {
+        }
+        // Check if the global cart item limit would be reached by this addition event.
+        if (totalItems + (quantity + 1) > 3) {
+            useToast("Sólo se permiten 3 ítems por compra en total. No se pueden agregar más unidades de este ítem.", 3000);
+            return;
+        }
+        else {
             setQuantity(prev => prev + 1);
         }
     };
@@ -71,21 +89,18 @@ export default function ItemDetailContainer() {
     const decreaseItem = () => {
         if (quantity > 0) setQuantity(prev => prev - 1);
         if (quantity === 0) {
-            showToast('Alcanzaste el mínimo de unidades para este ítem', 2000);
+            useToast('Alcanzaste el mínimo de unidades para este ítem', 2000);
         }
     };
 
     const handleAddToCart = () => {
-        if (!item.available) {
-            showToast("Lo sentimos! Este producto no está disponible.", 3000);
-            return;
-        }
         if (quantity > 0) {
-            addCartItem(item, quantity);
+            const cartItemToAdd = convertToCartItem(item, quantity);
+            addCartItem(cartItemToAdd, quantity);
             setQuantity(0);
-            showToast("Éxito - tu selección fue añadida al carrito!", 3000);
+            useToast("Éxito - tu selección fue añadida al carrito!", 3000);
         } else {
-            showToast("Error - seleccioná una cantidad!", 2000);
+            useToast("Error - seleccioná una cantidad!", 2000);
         }
     };
 
@@ -138,6 +153,15 @@ export default function ItemDetailContainer() {
                                 handleAddToCart();
                             }}
                         />
+                        {totalItems === 0 ?
+                        "" : <Button
+                            label="Ver Carrito"
+                            aria-label="Ver Carrito"
+                            className="p-button-text"
+                            onClick={() => {
+                                navigate('/cartDisplay');
+                            }}
+                        /> }
                     </div>
                 </div>
             </div>

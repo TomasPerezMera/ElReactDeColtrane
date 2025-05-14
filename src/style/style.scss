@@ -142,7 +142,7 @@ header {
         .p-card-content {
             @include mixins.itemDetailContainer;
             display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
+            grid-template-columns: 0.9fr 1.1fr;
             grid-template-rows: auto auto;
             gap: 5px 5px;
             grid-template-areas:
@@ -157,22 +157,31 @@ header {
                     height: auto;
                     margin: 0 auto;
                     cursor: pointer;
+                    position: sticky;
+                    top: 100px;
                 }
             }
             .cardBodyContainer {
+                width: 100%;
                 .itemDetail {
                     grid-area: itemDetail;
+                    background-color: rgba(61, 5, 152, 0.237);
+                    background-blend-mode: overlay;
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin: 10px;
                     h1 {
                         @include mixins.title;
-                        font-size: clamp(2.5rem, 2vw, 3.5rem);
+                        font-size: clamp(2.2rem, 2vw, 2.5rem);
                     }
                     p {
                         @include mixins.text;
-                        font-size: clamp(1.8rem, 2vw, 2.5rem);
+                        font-size: clamp(1.5rem, 2vw, 2rem);
+                        margin: 10px auto;
                     }
                     .albumDescription {
                         @include mixins.text;
-                        font-size: clamp(1rem, 2vw, 1.2rem);
+                        font-size: clamp(0.8rem, 2vw, 1rem);
                     }
                 }
                 .buttonsContainer{
@@ -193,17 +202,18 @@ header {
                         display: flex;
                         flex-flow: row nowrap;
                         justify-content: space-between;
+                        align-items: center;
+                        align-content: center;
                         margin: 10px auto;
-                        gap: 5rem;
-                        width: 90%;
+                        gap: 6rem;
+                        width: 100%;
                         button {
                             @include mixins.button;
-                            flex: 1;
-                            width: calc(50% - 1rem);
-                            min-width: 30%;
-                            max-width: 40%;
+                            flex-shrink: 1;
+                            width: 100%;
+                            height: auto;
                             span {
-                                font-size: clamp(1.2rem, 2vw, 1.5rem);
+                                font-size: clamp(1rem, 2vw, 1.2rem);
                             }
                         }
                     }
@@ -221,31 +231,61 @@ header {
     align-items: center;
     margin: 20px auto 40px;
     padding: 10px;
-    .cartItemContainer {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 5px;
-        width: 90%;
-        margin: 5px auto;
-        padding: 10px;
-        text-align: center;
-        img {
-            width: 12%;
-            height: auto;
-            margin: 0 auto;
-            cursor: default;
-        }
-        button {
-            @include mixins.button;
-            font-size: clamp(0.8rem, 2vw, 1.2rem);
-        }
-        .p-card-title {
-            @include mixins.title;
-        }
-        .p-card-subtitle {
-            @include mixins.title;
+    .cartItemGrid {
+        margin: 10px 20px;
+        .cartItemList{
+            li {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-auto-rows: auto;
+                grid-auto-flow: column;
+                gap: 5px;
+                width: 100%;
+                margin: 5px auto;
+                padding: 10px;
+                text-align: center;
+                grid-template-areas:
+                    "cartItemImage cartItemDetails cartItemButtons";
+                .cartItemImage {
+                    grid-area: cartItemImage;
+                    width: 40%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        margin: 0 auto;
+                        cursor: default;
+                    }
+                }
+                .cartItemDetails {
+                    grid-area: cartItemDetails;
+                    text-align: center;
+                    width: 100%;
+                    margin: 5px auto;
+                    padding: 10px;
+                    @include mixins.text;
+                    font-size: clamp(1.5rem, 2vw, 2rem);
+                    .p-card-title {
+                        @include mixins.title;
+                    }
+                    .p-card-subtitle {
+                        @include mixins.title;
+                    }
+                }
+                .cartItemButtons {
+                    grid-area: cartItemButtons;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    gap: 10px;
+                    margin: 5px auto;
+                    button {
+                        @include mixins.button;
+                        font-size: clamp(0.8rem, 2vw, 1.2rem);
+                    }
+                }
+            }
         }
     }
 }
