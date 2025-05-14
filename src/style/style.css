@@ -1,11 +1,9 @@
-/*Partials Import*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*Variables*/
 @font-face {
   font-family: "Clarendon Regular";
   font-style: normal;
@@ -21,11 +19,9 @@ body {
   height: 100%;
 }
 
-/*Partials Import*/
 /*Mixin Declaration*/
 /*Use with "@include mixins.{mixin}"!!*/
 /*Media Queries*/
-/*Component Styles*/
 main {
   display: flex;
   flex-flow: column nowrap;
@@ -220,6 +216,10 @@ header nav .navButtons button img {
   height: auto;
   margin: 0 auto;
   cursor: pointer;
+  transition: 1s ease;
+}
+.catalogContainer .catalogItem img:hover {
+  transform: scale(1.15);
 }
 .catalogContainer .catalogItem button {
   justify-content: center;
@@ -322,6 +322,10 @@ header nav .navButtons button img {
   cursor: pointer;
   position: sticky;
   top: 30px;
+  transition: 1s ease;
+}
+.itemDetailContainer .p-card-body .p-card-content .imageContainer img:hover {
+  transform: scale(1.1);
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer {
   width: 100%;
