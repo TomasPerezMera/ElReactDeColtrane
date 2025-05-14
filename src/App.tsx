@@ -5,6 +5,7 @@ import Catalog from './components/Catalog';
 import CartDisplay from './components/CartDisplay';
 import NotFound from './components/NotFound';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import ConfirmPurchaseDisplay from './components/ConfirmPurchaseDisplay';
 import { PrimeReactProvider } from 'primereact/api';
 import { HashRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
@@ -38,6 +39,7 @@ export default function App() {
               <Route path="/catalog" element={<Catalog />} />
               <Route path="/cartDisplay" element={<CartDisplay />} />
               <Route path="/item/:id" element={<ItemDetailContainer />} />
+              <Route path="/confirmPurchase" element={<ConfirmPurchaseDisplay />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

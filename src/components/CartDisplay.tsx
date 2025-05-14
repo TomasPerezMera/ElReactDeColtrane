@@ -1,23 +1,17 @@
 import { useContext } from "react";
-// START: Ensure updateCartItemQuantity is included in the import
-import { CartContext, CartContextType, CartItem } from '../context/CartContext';
-// END: Ensure updateCartItemQuantity is included in the import
+import { CartContext, CartContextInterface, CartItem } from '../context/CartContext';
 import { precioARS } from '../utils/currencyFormatter';
 import { Button } from 'primereact/button';
-import ContactForm from "./ContactForm";
+import { useNavigate } from "react-router-dom";
 
 export default function CartDisplay() {
-    // START: Destructure the new function from context
-    const { cartList, deleteCartItem, clearCart, totalItems, updateCartItemQuantity } = useContext(CartContext) as CartContextType;
-    // END: Destructure the new function from context
+    const { cartList, clearCart, totalItems, updateCartItemQuantity } = useContext(CartContext) as CartContextInterface;
+    const navigate = useNavigate();
 
-    // START: Corrected function to decrease item quantity
+    // Function to decrease item quantity.
     const handleDecreaseItem = (item: CartItem) => {
-        // Call the new context function to update quantity
-        // It will handle removing the item if quantity goes to 0
         updateCartItemQuantity(item.id, item.quantity - 1);
     }
-    // END: Corrected function to decrease item quantity
 
     const total = cartList.reduce((sum: number, item: CartItem) => {
         const price = item.price || 0;
@@ -25,18 +19,21 @@ export default function CartDisplay() {
         return sum + (price * quantity);
     }, 0);
 
-    // START: Corrected function to increase item quantity
     const handleAddItem = (item: CartItem) => {
-        // Call the new context function to update quantity
-        // The context function will handle the global quantity check
         updateCartItemQuantity(item.id, item.quantity + 1);
     };
-    // END: Corrected function to increase item quantity
 
 
     return (
         <div className='cartDisplayContainer'>
-            <h1> Tu Carrito </h1>
+            <div className="cartTitleContainer">
+                <h1>
+                    Tu Carrito:
+                </h1>
+                <div className="clearCartButtonContainer">
+                    <Button label="Vaciar Carrito" outlined onClick={clearCart} />
+                </div>
+            </div>
             {cartList.length === 0 ? (
                 <p>Tu carrito está vacío.</p>
             ) : (
@@ -56,26 +53,32 @@ export default function CartDisplay() {
                                         <Button label="-" outlined onClick={() => handleDecreaseItem(item)} disabled={item.quantity <= 0} />
                                         <Button disabled outlined>{item.quantity}</Button>
                                         <Button label="+" outlined onClick={() => handleAddItem(item)} />
-                                        <Button label="x" outlined onClick={() => deleteCartItem(item.id)} />
                                     </div>
                                 </li>
                             ))}
                         </ul>
                     </div>
-                    <div className="clearCartButtonContainer">
-                        <Button label="Vaciar Carrito" outlined icon="pi pi-trash" onClick={clearCart} className="p-button-danger" />
-                    </div>
-                    <div className="cartBottomText">
-                        <h2>Total: {precioARS(total)}</h2>
-                        <h2>Número de Items: {totalItems}</h2>
+                    <div className="cartBottomContainer">
+                        <div className="cartBottomText">
+                            <h2>Número Total de Items: {totalItems}</h2>
+                            <h2>Total: <span>{precioARS(total)}</span></h2>
+                        </div>
                     </div>
                 </>
             )}
-            <div className="checkoutButtonContainer">
-                <Button label="Finalizar Compra" className="p-button-success" />
-            </div>
-            <div className="contactFormContainer">
-                <ContactForm />
+            <div className="confirmPurchaseButtonContainer">
+                    <Button
+                        label="Volver al Catalogo"
+                        onClick={() => navigate('/catalog')}
+                    />
+                {cartList.length === 0 ? (
+                    "" ) : (
+                    <Button
+                    label="Finalizar Compra"
+                    outlined
+                    onClick={() => navigate('/confirmPurchase')}
+                    /> )
+                }
             </div>
         </div>
     );

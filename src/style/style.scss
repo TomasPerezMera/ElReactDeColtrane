@@ -82,7 +82,7 @@ header {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 0px 0px;
+    gap: 5px;
     grid-template-areas:
     "welcomeImage welcomeText";
     margin: 10px auto;
@@ -174,6 +174,7 @@ header {
             .imageContainer{
                 grid-area: img;
                 width: 90%;
+                height: 90%;
                 margin: auto;
                 img {
                     width: 100%;
@@ -181,7 +182,7 @@ header {
                     margin: 0 auto;
                     cursor: pointer;
                     position: sticky;
-                    top: 100px;
+                    top: 30px;
                 }
             }
             .cardBodyContainer {
@@ -254,6 +255,33 @@ header {
     align-items: center;
     margin: 20px auto 40px;
     padding: 10px;
+    .cartTitleContainer{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 90%;
+        margin: 5px auto;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            @include mixins.title;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: underline;
+            flex-grow: 2;
+            flex-basis: 80%;
+        }
+        .clearCartButtonContainer {
+            flex-shrink: 2;
+            flex-basis: 20%;
+            button {
+                @include mixins.button;
+                font-size: clamp(0.8rem, 2vw, 1rem);
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
     .cartItemGrid {
         margin: 10px 20px;
         .cartItemList{
@@ -309,6 +337,82 @@ header {
                     }
                 }
             }
+        }
+    }
+    .cartBottomContainer{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        width: 90%;
+        margin: 5px auto;
+        .cartBottomText {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            h2 {
+                @include mixins.text;
+                span {
+                    font-size: clamp(1.5rem, 2vw, 1.6rem);
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .confirmPurchaseButtonContainer {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            width: 80%;
+            margin: 0px auto;
+        button {
+                    @include mixins.button;
+        }
+    }
+}
+
+.contactFormContainer{
+    @include mixins.sectionContainer;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    margin: 5px auto;
+    h1 {
+        @include mixins.title;
+        font-size: clamp(2rem, 2vw, 2.5rem);
+        margin: 10px auto;
+        width: 80%;
+        font-style: italic;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    h2 {
+        @include mixins.text;
+        margin: 10px auto;
+    }
+    form {
+        margin: 10px auto;
+        width: 90%;
+        .formField {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            width: 80%;
+            margin: 15px auto;
+            font-size: clamp(1.5rem, 2vw, 1.7rem);
+            input {
+                width: 50%;
+                max-width: 70%;
+                overflow-x: auto;
+            }
+        }
+        button {
+            @include mixins.button;
+            width: 40%;
+            max-width: 50%;
+            margin: 20px auto;
         }
     }
 }

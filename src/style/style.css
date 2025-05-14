@@ -134,7 +134,7 @@ header nav .navButtons button img {
   grid-auto-flow: column;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  gap: 0px 0px;
+  gap: 5px;
   grid-template-areas: "welcomeImage welcomeText";
   margin: 10px auto;
   padding: 10px;
@@ -312,6 +312,7 @@ header nav .navButtons button img {
 .itemDetailContainer .p-card-body .p-card-content .imageContainer {
   grid-area: img;
   width: 90%;
+  height: 90%;
   margin: auto;
 }
 .itemDetailContainer .p-card-body .p-card-content .imageContainer img {
@@ -320,7 +321,7 @@ header nav .navButtons button img {
   margin: 0 auto;
   cursor: pointer;
   position: sticky;
-  top: 100px;
+  top: 30px;
 }
 .itemDetailContainer .p-card-body .p-card-content .cardBodyContainer {
   width: 100%;
@@ -458,6 +459,63 @@ header nav .navButtons button img {
   margin: 20px auto 40px;
   padding: 10px;
 }
+.cartDisplayContainer .cartTitleContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: 5px auto;
+  align-items: center;
+  justify-content: center;
+}
+.cartDisplayContainer .cartTitleContainer h1 {
+  margin: 10px auto;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  background: white;
+  color: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 40px auto 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1.2;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+  flex-grow: 2;
+  flex-basis: 80%;
+}
+.cartDisplayContainer .cartTitleContainer .clearCartButtonContainer {
+  flex-shrink: 2;
+  flex-basis: 20%;
+}
+.cartDisplayContainer .cartTitleContainer .clearCartButtonContainer button {
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border-color: #2551a8;
+  background-color: transparent;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  width: 100%;
+  height: auto;
+}
+.cartDisplayContainer .cartTitleContainer .clearCartButtonContainer button:hover {
+  background-color: #72419d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
+}
 .cartDisplayContainer .cartItemGrid {
   margin: 10px 20px;
 }
@@ -564,6 +622,152 @@ header nav .navButtons button img {
   transform: scale(1.05);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
 }
+.cartDisplayContainer .cartBottomContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 90%;
+  margin: 5px auto;
+}
+.cartDisplayContainer .cartBottomContainer .cartBottomText {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.cartDisplayContainer .cartBottomContainer .cartBottomText h2 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 90vw;
+  color: white;
+  margin: 20px 30px;
+  padding: 10px;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  letter-spacing: 0.08em;
+}
+.cartDisplayContainer .cartBottomContainer .cartBottomText h2 span {
+  font-size: clamp(1.5rem, 2vw, 1.6rem);
+  font-weight: bold;
+  text-decoration: underline;
+}
+.cartDisplayContainer .confirmPurchaseButtonContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0px auto;
+}
+.cartDisplayContainer .confirmPurchaseButtonContainer button {
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border-color: #2551a8;
+  background-color: transparent;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.cartDisplayContainer .confirmPurchaseButtonContainer button:hover {
+  background-color: #72419d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
+}
+
+.contactFormContainer {
+  display: flex;
+  margin: 5px auto;
+  padding: 10px;
+  gap: 1rem;
+  width: 90%;
+  border: 5px solid transparent;
+  border-image: linear-gradient(to left, #72419d, #2551a8);
+  border-image-slice: 1;
+  background-color: transparent;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  width: 90%;
+  margin: 5px auto;
+}
+.contactFormContainer h1 {
+  margin: 10px auto;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  background: white;
+  color: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 40px auto 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(66, 135, 245, 0.6);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: clamp(2rem, 2vw, 2.5rem);
+  margin: 10px auto;
+  width: 80%;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.contactFormContainer h2 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 90vw;
+  color: white;
+  margin: 20px 30px;
+  padding: 10px;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  letter-spacing: 0.08em;
+  margin: 10px auto;
+}
+.contactFormContainer form {
+  margin: 10px auto;
+  width: 90%;
+}
+.contactFormContainer form .formField {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: 15px auto;
+  font-size: clamp(1.5rem, 2vw, 1.7rem);
+}
+.contactFormContainer form .formField input {
+  width: 50%;
+  max-width: 70%;
+  overflow-x: auto;
+}
+.contactFormContainer form button {
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border-color: #2551a8;
+  background-color: transparent;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  width: 40%;
+  max-width: 50%;
+  margin: 20px auto;
+}
+.contactFormContainer form button:hover {
+  background-color: #72419d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(66, 135, 245, 0.6);
+}
 
 /*Media Query Imports*/
 @media (max-width: 1024px) {
@@ -591,8 +795,15 @@ header nav .navButtons button img {
   header nav .navButtons {
     max-width: 40%;
   }
-  .welcome .separator {
-    margin: 10px auto;
+  .welcomeContainer {
+    grid-template-columns: 1fr;
+    grid-template-areas: "welcomeImage" "welcomeText";
+  }
+  .welcomeContainer .welcomeImage {
+    width: 50%;
+  }
+  .welcomeContainer .welcomeText {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
   }
   .catalogContainer .catalogItem {
     flex: 0 0 calc(50% - 1rem);
@@ -643,6 +854,12 @@ header nav .navButtons button img {
   }
   header nav .navButtons {
     max-width: calc(50% - 1rem);
+  }
+  .welcomeContainer .welcomeImage {
+    width: 80%;
+  }
+  .welcomeContainer .welcomeText {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
   }
   .catalogContainer .catalogItem {
     flex: 0 0 100%;

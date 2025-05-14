@@ -6,7 +6,7 @@ import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 import { useContext, useState } from 'react';
-import { CartContext, CartContextType, CatalogItem, CartItem  } from '../context/CartContext';
+import { CartContext, CartContextInterface, CatalogItem, CartItem  } from '../context/CartContext';
 import useToast from '../hooks/useToast';
 
 // This component is used to display the details of a specific item in the catalog.
@@ -41,7 +41,7 @@ export default function ItemDetailContainer() {
     const { id } = useParams();
     const { catalog, loading, error } = useCatalogData();
     const navigate = useNavigate();
-    const { addCartItem, totalItems, } = useContext(CartContext) as CartContextType;
+    const { addCartItem, totalItems, } = useContext(CartContext) as CartContextInterface;
 
     // Initializing item quantity to 0 and its setter.
     const [quantity, setQuantity] = useState(0);

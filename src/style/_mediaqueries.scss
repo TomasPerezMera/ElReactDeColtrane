@@ -25,9 +25,16 @@
             }
         }
     }
-    .welcome {
-        .separator {
-            margin: 10px auto;
+    .welcomeContainer {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "welcomeImage"
+        "welcomeText";
+        .welcomeImage{
+        width: 50%;
+        }
+        .welcomeText {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
         }
     }
     .catalogContainer {
@@ -93,6 +100,14 @@
             .navButtons {
                 max-width: calc(50% - 1rem);
             }
+        }
+    }
+    .welcomeContainer {
+        .welcomeImage{
+            width: 80%;
+        }
+        .welcomeText {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
         }
     }
     .catalogContainer {
