@@ -110,7 +110,6 @@ export default function ItemDetailContainer() {
                 <img
                     src={`/ElReactDeColtrane/${item.source}`}
                     alt={item.name}
-                    onClick ={() => navigate('/catalog')}
                 />
             </div>
             <div className="cardBodyContainer">

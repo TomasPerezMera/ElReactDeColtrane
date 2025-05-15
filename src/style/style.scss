@@ -45,6 +45,7 @@ header {
             @include mixins.headerTitle;
             margin: 5px auto;
             flex-basis: 70%;
+            cursor: pointer;
         }
         .navItem {
             margin: auto;
@@ -123,7 +124,7 @@ header {
     justify-content: center;
     align-items: center;
     margin: 20px auto 40px;
-    padding: 10px;
+    padding: 20px;
     .catalogItem {
         flex: 0 0 calc(33.333% - 1rem);
         max-width: calc(33.333% - 1rem);
@@ -184,7 +185,6 @@ header {
                     width: 100%;
                     height: auto;
                     margin: 0 auto;
-                    cursor: pointer;
                     position: sticky;
                     top: 30px;
                     transition: 1s ease;

@@ -79,6 +79,7 @@ header nav .title {
   line-height: 1.2;
   margin: 5px auto;
   flex-basis: 70%;
+  cursor: pointer;
 }
 header nav .navItem {
   margin: auto;
@@ -202,7 +203,7 @@ header nav .navButtons button img {
   justify-content: center;
   align-items: center;
   margin: 20px auto 40px;
-  padding: 10px;
+  padding: 20px;
 }
 .catalogContainer .catalogItem {
   flex: 0 0 calc(33.333% - 1rem);
@@ -319,7 +320,6 @@ header nav .navButtons button img {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  cursor: pointer;
   position: sticky;
   top: 30px;
   transition: 1s ease;
